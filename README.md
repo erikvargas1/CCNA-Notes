@@ -1,6 +1,6 @@
 # CCNA-Notes
 
-Day 13 Subnetting PART 1 
+**Day 13 Subnetting PART 1**
 
 The IETF (Internet Engineering Task Force) introduced **CIDR** in 1993 to replace the "Classful" addressing system.
 
@@ -18,7 +18,7 @@ How to calculate how many usable host address in a network
 N = number of host bits 
 -2 = For the Network address and the Broadcast address
 
+NOTES: /31 subnet mask can be used for a point-to-point Router connection. /32 can be used when you want to create a static route not to a network but to a specific host.
 
-
-
+I like using /30 for PTP Router connections. Since you will have 4 addresses: one for the network and one for the broadcast. And the last 2 for each interface 
 
