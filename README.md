@@ -135,3 +135,22 @@ Subnet 7 = 192.168.255.192/27
 Subnet 8  = 192.168.255.224/27
 
 ----
+## Common CCNA Question 
+What subnet does host 192.168.5.57/24 belong to?
+
+subnet ID: ______/27
+
+To find the network address we simply need to change all of the hosts bits to `0`
+
+`**1100000| 10101000 | 000000101 | 001**11001`
+
+ `192   .    168    .      5   .     57`
+
+`**1100000| 10101000 | 000000101 | 001**00000` = **Answer: 192.168.5.32**
+
+----
+
+
+
+
+
