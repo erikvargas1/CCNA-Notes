@@ -83,3 +83,55 @@ This time the borrowed bits are `all 1`, so this is our last subnet, we don’t 
 
 **broadcast addresss= 192.168.1.255** Therefore the subnet range is: **192.168.1.192 - 192.168.1.255**
 
+------
+## How to Calculate subnets Faster
+![Screenshot 2025-04-24 002433](https://github.com/user-attachments/assets/1c110c3b-9f0e-48fe-8b4b-6bc4591cdc1e)
+
+**Note: Borrowing 1 bit = can make 2 subnets** 
+
+in this instance we need 5 subnets given a `192.168.255.0/24`, we will take 3 bits from the host bits to meet this requirement 3 bits will make 8 subnets. 2^3 = 8 subnets
+
+**2^X = number of subnets 
+(x = number of "borrowed" bits)**
+
+
+`**1100000| 10101000 | 00000001| 111**00000`
+
+ `192   .    168    .      255   .    0`  =  192.168.255.0/27
+
+
+| Bit Value | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|-----------|-----|----|----|----|---|---|---|---|
+| Bit Set   |  1  | 1  | 1  | 0  | 0 | 0 | 0 | 0 |
+
+Use the last octet of the network portion to calculate the next subnets. This is done by just adding the last octet over and over.
+
+Starting with `192.168.255.0/27`, we increment by 32 for each new subnet:
+
+### Subnet #2
+```
+192.168.255.0/24 + 32 = 192.168.255.32/27
+```
+
+### Subnet #3
+```
+192.168.255.32/24 + 32 = 192.168.255.64/27
+```
+
+### Subnet #4
+```
+192.168.255.64/24 + 32 = 192.168.255.96/27
+```
+
+### Subnet #5
+```
+192.168.255.128/24 + 32 = 192.168.255.128/27
+```
+
+Subnet 6 = 192.168.255.160/27
+
+Subnet 7 = 192.168.255.192/27
+
+Subnet 8  = 192.168.255.224/27
+
+----
