@@ -5,20 +5,28 @@
 **What is a client?**
 A client is a device that requests a service or resource made available by a server.
 
+----
+
 **What is a server?**
 A server is a device that provides a resource or service to clients.
 
 A client can also act as a server in some situations. For example, when two computers are connected, one computer may host a resource (acting as the server), while the other computer requests access to that resource (acting as the client).
+
+----
 
 **What is a Switch?**
 A switch is a device used to forward traffic (frames) within a LAN.
 
 Switches provide connectivity to hosts within the same LAN. Layer 2 switches do not separate different networks. They connect and expand networks (via interfaces).
 
+----
+
 **What is a Router?**
 A router is a device used to provide connectivity between different LANs. Routers are used to connect multiple networks.
 
 Routers determine the best path to route traffic and are essential for sending data over the internet.
+
+----
 
 **What is a Firewall?**
 A firewall is a network security device that filters incoming and outgoing network traffic based on rules.
@@ -27,8 +35,8 @@ Firewalls can be hardware or software-based and are used to protect networks fro
 
 ------
 ## Day 6- Ethernet LAN Switching (part 2)
-**What is ARP?**
-ARP is used to discover the Layer 2 address (MAC address) of a known Layer 3 address (IP address).
+**What is ARP?** ARP is used to discover the Layer 2 address (MAC address) of a known Layer 3 address (IP address).
+
 > ARP is used to learn the MAC address of a device, for which you already know the IP address
 
 **The ARP process consists of two messages:** ARP Request, ARP Reply
