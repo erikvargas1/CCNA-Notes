@@ -1,5 +1,24 @@
 # CCNA-Notes
 
+--------
+
+## Common CCNA Question 
+What subnet does host 192.168.5.57/24 belong to?
+
+subnet ID: ______/27
+
+To find the network address we simply need to change all of the hosts bits to `0`
+
+`**1100000| 10101000 | 000000101 | 001**11001`
+
+ `192   .    168    .      5   .     57`
+
+`**1100000| 10101000 | 000000101 | 001**00000` = **Answer: 192.168.5.32**
+
+
+
+-------
+
 ## Day 1 Network Devices
 
 **What is a client?**
@@ -37,7 +56,7 @@ Firewalls can be hardware or software-based and are used to protect networks fro
 ## Day 6- Ethernet LAN Switching (part 2)
 **What is ARP?** 
 ARP is used to discover the Layer 2 address (MAC address) of a known Layer 3 address (IP address). In other words, ARP is used to learn the MAC address of a device, for which you already know the IP address
-
+----
 **The ARP process consists of two messages:** ARP Request, ARP Reply
 
 ARP Request is sent as a broadcast ethernet frame. Broadcast means it is sent to all hosts on the network. Because the Layer 2 address of a destination host is unknown, it broadcasts the request and waits for a reply from the correct device. 
@@ -54,7 +73,7 @@ Dst IP: 192.168.1.3
 Src MAC: 9D00  
 Dst MAC: FFFF:FFFF:FFFF
 ```
-
+---------
 **FFFF:FFFF:FFFF** = broadcast MAC address. This is the destination MAC address when a device wants to send ethernet frames to all other devices on the local network.
 
 When a switch broadcasts a frame, the switch shoots out the frame to all of its interfaces except the one interface, in which the arp request came from. 
@@ -67,6 +86,7 @@ Used to store IP address to MAC address association (mapping of IP to MAC addres
 
 > Use arp –a to view the ARP table (Windows, macOS, Linux)
 
+------------
 **Type of Entries in a ARP Tables: Static & Dynamic**
 
 Type: Static = default entry
@@ -82,7 +102,6 @@ It describes how devices avoid collisions in a half-duplex situation, and how th
 
 **Full-duplex:** Means device can send and receive data at the same time. It does not have to wait (Example: Switches Layer 2)
 
------
 ## Interface Errors the same on a switch and a router:
 Switch1#show interface g0/1
 
@@ -98,25 +117,42 @@ Switch1#show interface g0/1
 
 - Output errors: Frames the switch tried to send, but failed due to an error
 
---------
-
-## Common CCNA Question 
-What subnet does host 192.168.5.57/24 belong to?
-
-subnet ID: ______/27
-
-To find the network address we simply need to change all of the hosts bits to `0`
-
-`**1100000| 10101000 | 000000101 | 001**11001`
-
- `192   .    168    .      5   .     57`
-
-`**1100000| 10101000 | 000000101 | 001**00000` = **Answer: 192.168.5.32**
-
 ----
+## Day 16 VLANs (part 1)
 
+**What is a LAN?** 
+The simple answer is: A LAN is a group of devices in a single location.
 
+A more specific definition: A LAN is a single **broadcast domain**, including all devices in that broadcast domain. 
 
+**A broadcast domain:** is the group of devices, which will receive a broadcast frame (dest MAC FFFF:FFFF:FFFF) sent by any one of its members.
 
+## image here
 
+**NOTES broadcast traffic** 
+Performance: Lots of unnecessary broadcast traffic can reduce network performance. 
+Security: In a LAN computers by default can reach each other directly without traffic passing through the routers (LAN traffic). This is a problem because the security policies we apply on a router/firewall wont have any effect, since the device can talk to each other without the need of a router.   
+
+---------
+
+**What is a VLAN?**
+Its essentially a way to logically split up a Layer 2 broadcast domain to make mutiple separate broadcast domains. 
+
+**What is the purpose of VLANs?**
+- Improve Performance and Security.
+- VLANs help to reduce unnecessary broadcast traffic, which helps prevent network congestion, and therefore improve network performance.
+- VLANs improves network security by limiting broadcast and unknown unicast traffic. Since these messages won't be received by devices outside of the VLAN. 
+ 
+**VLANS (Virtual Local Area Network)**
+- VLANs are configured on switches on a per-interface basis
+- VLANS Logically separate end hosts at layer 2
+
+A switch WILL NOT forward traffic between VLANs, the switches must forward the traffic to a router. Routers are used to route between VLANs. 
+
+Different types of VLANs
+- **Default VLAN:** this is the VLAN that all interfaces are assigned to by default
+- ?
+
+> VLANs 1,1002-1005 exist by default and **cannot be deleted**
+ 
 
