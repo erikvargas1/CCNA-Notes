@@ -158,4 +158,35 @@ Different types of VLANs
 
 > VLANs 1,1002-1005 exist by default and **cannot be deleted**
  
+----
+## Day 17 VLANs (part 2)
+
+**What is trunk ports?** 
+A trunk ports is used to carry traffic from multiple VLANs over a single interface. 
+
+**VLAN Tagging**
+Switches will **tag** all frames that they send over a trunk link. This allows the receiving switch to know which VLAN the frame belongs to. 
+
+> Truck ports = "tagged" ports
+> Access ports = "untagged" ports 
+
+**802.1Q (dot1q)**
+The 802.1q tag is inserted between the source and type/length fields of the ethernet frame
+VID (Vlan ID) - indenties the VLAN the frame belongs to 
+
+802.1Q has a feature called the **native VLAN.** 
+**The native VLAN is VLAN 1** by default on all trunk ports, however this can be changed manually on each trunk port. 
+
+The switch does not add an 802.1Q tag to frames in the native VLAN. 
+When a switch receives a untagged frame on a trunk port, it assumes the frame belongs to the native VLAN.
+
+**its very important that the native VLAN matches between swtiches.** Switches will still forward traffic if there is native VLAN mismatch problems may occur. 
+
+15:49 screenshot 
+
+------
+
+
+
+
 
