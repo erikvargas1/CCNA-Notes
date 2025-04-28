@@ -54,8 +54,11 @@ Firewalls can be hardware or software-based and are used to protect networks fro
 
 ------
 ## Day 6- Ethernet LAN Switching (part 2)
+
 **What is ARP?** 
+
 ARP is used to discover the Layer 2 address (MAC address) of a known Layer 3 address (IP address). In other words, ARP is used to learn the MAC address of a device, for which you already know the IP address
+
 ----
 **The ARP process consists of two messages:** ARP Request, ARP Reply
 
