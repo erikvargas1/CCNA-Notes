@@ -184,6 +184,7 @@ When a switch receives a untagged frame on a trunk port, it assumes the frame be
 
 15:49 screenshot 
 
+
 ------
 
 
