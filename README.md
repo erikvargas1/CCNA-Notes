@@ -130,7 +130,7 @@ A more specific definition: A LAN is a single **broadcast domain**, including al
 
 **A broadcast domain:** is the group of devices, which will receive a broadcast frame (dest MAC FFFF:FFFF:FFFF) sent by any one of its members.
 
-## image here
+![Screenshot 2025-04-28 221449](https://github.com/user-attachments/assets/ae653aec-7140-44fd-b9bc-8fc8aa4c6484)
 
 **NOTES broadcast traffic** 
 Performance: Lots of unnecessary broadcast traffic can reduce network performance. 
@@ -161,8 +161,8 @@ Different types of VLANs
 ----
 ## Day 17 VLANs (part 2)
 
-**What is trunk ports?** 
-A trunk ports is used to carry traffic from multiple VLANs over a single interface. 
+**What is a trunk port?** 
+A trunk ports are used to carry traffic from multiple VLANs over a single interface. 
 
 **VLAN Tagging**
 Switches will **tag** all frames that they send over a trunk link. This allows the receiving switch to know which VLAN the frame belongs to. 
@@ -182,7 +182,7 @@ When a switch receives a untagged frame on a trunk port, it assumes the frame be
 
 **its very important that the native VLAN matches between swtiches.** Switches will still forward traffic if there is native VLAN mismatch problems may occur. 
 
-15:49 screenshot 
+![Screenshot 2025-04-28 232948](https://github.com/user-attachments/assets/df6105cb-5a5d-4301-8d24-d372129c165e)
 
 
 ------
