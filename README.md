@@ -133,8 +133,8 @@ A more specific definition: A LAN is a single **broadcast domain**, including al
 ![Screenshot 2025-04-28 221449](https://github.com/user-attachments/assets/ae653aec-7140-44fd-b9bc-8fc8aa4c6484)
 
 **NOTES broadcast traffic** 
-Performance: Lots of unnecessary broadcast traffic can reduce network performance. 
-Security: In a LAN computers by default can reach each other directly without traffic passing through the routers (LAN traffic). This is a problem because the security policies we apply on a router/firewall wont have any effect, since the device can talk to each other without the need of a router.   
+- Performance: Lots of unnecessary broadcast traffic can reduce network performance. 
+- Security: In a LAN computers by default can reach each other directly without traffic passing through the routers (LAN traffic). This is a problem because the security policies we apply on a router/firewall wont have any effect, since the device can talk to each other without the need of a router.   
 
 ---------
 
@@ -162,7 +162,10 @@ Different types of VLANs
 ## Day 17 VLANs (part 2)
 
 **What is a trunk port?** 
-A trunk ports are used to carry traffic from multiple VLANs over a single interface. 
+It's a switch interface that carries traffic over multiple VLANs  
+
+**What is the purpose of a Trunk port?**
+It allows switches to forward traffic from multiple VLANs over a single physical interface, instead of having to use a separate physical interface for every single VLAN
 
 **VLAN Tagging**
 Switches will **tag** all frames that they send over a trunk link. This allows the receiving switch to know which VLAN the frame belongs to. 
@@ -171,16 +174,16 @@ Switches will **tag** all frames that they send over a trunk link. This allows t
 > Access ports = "untagged" ports 
 
 **802.1Q (dot1q)**
-The 802.1q tag is inserted between the source and type/length fields of the ethernet frame
-VID (Vlan ID) - indenties the VLAN the frame belongs to 
+802.1Q is a tag inserted into the Ethernet frame and is used to identify which VLAN the frame belongs to when sent over a trunk.
+The tag is inserted between the source and type/length fields of the ethernet frame. VID (Vlan ID) - identifies the VLAN the frame belongs to 
 
 802.1Q has a feature called the **native VLAN.** 
 **The native VLAN is VLAN 1** by default on all trunk ports, however this can be changed manually on each trunk port. 
 
-The switch does not add an 802.1Q tag to frames in the native VLAN. 
+Switches DO NOT add a 802.1Q tag to frames in the native VLAN. 
 When a switch receives a untagged frame on a trunk port, it assumes the frame belongs to the native VLAN.
 
-**its very important that the native VLAN matches between swtiches.** Switches will still forward traffic if there is native VLAN mismatch problems may occur. 
+**its very important that the native VLAN matches between swtiches.** Switches will still forward traffic if there is native VLAN mismatch, which will cause traffic problems.
 
 ![Screenshot 2025-04-28 232948](https://github.com/user-attachments/assets/df6105cb-5a5d-4301-8d24-d372129c165e)
 
