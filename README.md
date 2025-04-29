@@ -172,6 +172,7 @@ It allows switches to forward traffic from multiple VLANs over a single physical
 
 
 **VLAN Tagging**
+
 Switches will **tag** all frames that they send over a trunk link. This allows the receiving switch to know which VLAN the frame belongs to. 
 
 > Truck ports = "tagged" ports
