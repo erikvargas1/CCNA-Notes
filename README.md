@@ -1,24 +1,5 @@
 # CCNA-Notes
 
---------
-
-## Common CCNA Question 
-What subnet does host 192.168.5.57/24 belong to?
-
-subnet ID: ______/27
-
-To find the network address we simply need to change all of the hosts bits to `0`
-
-`**1100000| 10101000 | 000000101 | 001**11001`
-
- `192   .    168    .      5   .     57`
-
-`**1100000| 10101000 | 000000101 | 001**00000` = **Answer: 192.168.5.32**
-
-
-
--------
-
 ## Day 1 Network Devices
 
 **What is a client?**
@@ -95,30 +76,6 @@ Used to store IP address to MAC address association (mapping of IP to MAC addres
 Type: Static = default entry
 
 Dynamic = learned via ARP (This table is refreshed after 5 minutes)
-
------
-## Day 9 – Switches interface 
-**CSMA/CD:** Carrier Sense Mutiple access with collision detection.
-It describes how devices avoid collisions in a half-duplex situation, and how they react if collisions do occur. 
-
-**Half-duplex:** Means device cannot send and receive data at the same time. If it is receiving a frame, it must wait before sending a frame.  (Example: Hubs Layer 1 devices, repeating whatever signals they receive)
-
-**Full-duplex:** Means device can send and receive data at the same time. It does not have to wait (Example: Switches Layer 2)
-
-## Interface Errors the same on a switch and a router:
-Switch1#show interface g0/1
-
-- Runts: Frames that are smaller than the minimum frame size (64 bytes)
-
-- Giants: Frames that are larger than the maximum frame size (1518 bytes)
-
-- CRC: Frames that failed the CRC check (in the ethernet FCS trailer)
-
-- Frame: Frames that have an incorrect format (due to an error)
-
-- Input errors: Total of various counters, such as the above four. 
-
-- Output errors: Frames the switch tried to send, but failed due to an error
 
 ----
 ## Day 16 VLANs (part 1)
