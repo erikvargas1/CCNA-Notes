@@ -162,10 +162,14 @@ Different types of VLANs
 ## Day 17 VLANs (part 2)
 
 **What is a trunk port?** 
+
 It's a switch interface that carries traffic over multiple VLANs  
 
+
 **What is the purpose of a Trunk port?**
+
 It allows switches to forward traffic from multiple VLANs over a single physical interface, instead of having to use a separate physical interface for every single VLAN
+
 
 **VLAN Tagging**
 Switches will **tag** all frames that they send over a trunk link. This allows the receiving switch to know which VLAN the frame belongs to. 
