@@ -37,7 +37,6 @@ Firewalls can be hardware or software-based and are used to protect networks fro
 ## Day 6- Ethernet LAN Switching (part 2)
 
 **What is ARP?** 
-
 ARP is used to discover the Layer 2 address (MAC address) of a known Layer 3 address (IP address). In other words, ARP is used to learn the MAC address of a device, for which you already know the IP address
 
 ----
@@ -68,9 +67,8 @@ Switches learn MAC addresses through the ARP process by storing the source MAC a
 **What is an ARP Table?** 
 Used to store IP address to MAC address association (mapping of IP to MAC address) 
 
-> Use arp –a to view the ARP table (Windows, macOS, Linux)
+- Use **arp –a** to view the ARP table (Windows, macOS, Linux)
 
-------------
 **Type of Entries in a ARP Tables: Static & Dynamic**
 
 Type: Static = default entry
@@ -96,10 +94,10 @@ A more specific definition: A LAN is a single **broadcast domain**, including al
 ---------
 
 **What is a VLAN?**
-Its essentially a way to logically split up a Layer 2 broadcast domain to make mutiple separate broadcast domains. 
+Its essentially a way to logically split up a Layer 2 broadcast domain to make multiple separate broadcast domains. 
 
 **What is the purpose of VLANs?**
-- Improve Performance and Security.
+- Improves performance and security.
 - VLANs help to reduce unnecessary broadcast traffic, which helps prevent network congestion, and therefore improve network performance.
 - VLANs improves network security by limiting broadcast and unknown unicast traffic. Since these messages won't be received by devices outside of the VLAN. 
  
@@ -109,11 +107,9 @@ Its essentially a way to logically split up a Layer 2 broadcast domain to make m
 
 A switch WILL NOT forward traffic between VLANs, the switches must forward the traffic to a router. Routers are used to route between VLANs. 
 
-Different types of VLANs
 - **Default VLAN:** this is the VLAN that all interfaces are assigned to by default
-- ?
 
-> VLANs 1,1002-1005 exist by default and **cannot be deleted**
+- VLANs 1,1002-1005 exist by default and **cannot be deleted**
  
 ----
 ## Day 17 VLANs (part 2)
@@ -136,11 +132,10 @@ Switches will **tag** all frames that they send over a trunk link. This allows t
 > Access ports = "untagged" ports 
 
 **802.1Q (dot1q)**
-802.1Q is a tag inserted into the Ethernet frame and is used to identify which VLAN the frame belongs to when sent over a trunk.
-The tag is inserted between the source and type/length fields of the ethernet frame. VID (Vlan ID) - identifies the VLAN the frame belongs to 
+802.1Q is a tag inserted into the Ethernet frame and is used to identify which VLAN the frame belongs to when sent over a trunk. VID (Vlan ID) - identifies the VLAN the frame belongs to 
 
 802.1Q has a feature called the **native VLAN.** 
-**The native VLAN is VLAN 1** by default on all trunk ports, however this can be changed manually on each trunk port. 
+**The native VLAN is VLAN 1** by default on all trunk ports, However this can be changed manually on each trunk port. 
 
 Switches DO NOT add a 802.1Q tag to frames in the native VLAN. 
 When a switch receives a untagged frame on a trunk port, it assumes the frame belongs to the native VLAN.
@@ -149,10 +144,23 @@ When a switch receives a untagged frame on a trunk port, it assumes the frame be
 
 ![Screenshot 2025-04-28 232948](https://github.com/user-attachments/assets/df6105cb-5a5d-4301-8d24-d372129c165e)
 
-
 ------
+## Day 18 VLANs (part 3)
 
+**SVIs (Switch Virtual Interfaces)** are the virtual interfaces you can assign IP addresses to in a multilayer switch.
+- SVIs are **shutdown by default**, so remember to use **no shutdown**
 
+***This command enables Layer 3 routing on the switch. IMPORTANT** 
+SW2(config)#ip routing 
+
+***Change the interface from a Layer 2 switchport to a Layer 3 Routed Port (multilayer switch)**
+SW2(config)#no switchport 
+
+**Reset Interfaces to default settings** 
+R1(config)#default interface g0/0
+
+**Static Default Route** (192.168.1.194 is the next hop to the router)
+SW2(config)#ip 0.0.0.0 0.0.0.0 192.168.1.194
 
 
 
