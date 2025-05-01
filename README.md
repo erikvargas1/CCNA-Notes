@@ -145,22 +145,18 @@ When a switch receives a untagged frame on a trunk port, it assumes the frame be
 ![Screenshot 2025-04-28 232948](https://github.com/user-attachments/assets/df6105cb-5a5d-4301-8d24-d372129c165e)
 
 ------
-## Day 18 VLANs (part 3)
+## Day 19 DTP and VTP
 
-**SVIs (Switch Virtual Interfaces)** are the virtual interfaces you can assign IP addresses to in a multilayer switch.
-- SVIs are **shutdown by default**, so remember to use **no shutdown**
+not an exam objective, but review this still someday. 
 
-***This command enables Layer 3 routing on the switch. IMPORTANT** 
-SW2(config)#ip routing 
 
-***Change the interface from a Layer 2 switchport to a Layer 3 Routed Port (multilayer switch)**
-SW2(config)#no switchport 
+------
+## Day 20 Spanning tree protocol
 
-**Reset Interfaces to default settings** 
-R1(config)#default interface g0/0
 
-**Static Default Route** (192.168.1.194 is the next hop to the router)
-SW2(config)#ip 0.0.0.0 0.0.0.0 192.168.1.194
+
+
+
 
 
 
