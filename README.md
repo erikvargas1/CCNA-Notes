@@ -173,11 +173,13 @@ If a switch receives a *Hello BPDU* on an interface, it knows that the interface
 
 So, as I mentioned previously STP puts switch ports in either a **blocking** or **forwarding** state, to avoid Layer 2 loops in the network. However **ALL ports on the root bridge are put in a forwarding state, and other switches in the topology must have a path to reach the root bridge.**
 
-Insert screenshot 12:43 
+![image](https://github.com/user-attachments/assets/add81076-e56d-4e6e-9b34-57f681d9046a)
+
 
 As I said before, the switch with the lowest bridge ID becomes the root bridge, so therefore by default the switch with the lowest MAC address becomes the root bridge. This is with default settings. We can manipulate the switch election process by manually changing the bridge ID number to a lower number, so the switch we want to win becomes the root bridge. 
 
-Insert screenshot 14:23 
+![image](https://github.com/user-attachments/assets/5241ef3a-8a2f-47b6-b8ab-b86f9e359734)
+
 
 the bridge priority has been updated to be made of two parts, the bridge priority which is 4 bits, and the ‘extended system ID’, which is just the VLAN ID, which is 12 bits
 
@@ -199,10 +201,12 @@ The interface with the lowest root cost will be the root port. Root ports are al
 
 **Remember these path costs for the exam** 
 
-screenshot 21:29
+![image](https://github.com/user-attachments/assets/8e2fa1da-8210-487b-a357-4cb884203636)
+
 
 -----
-screenshot 22:46 | 22:59 explains how switches determine their root port based on root cost 
+![image](https://github.com/user-attachments/assets/18ff38ea-e03b-4868-95d8-76b3f13bb603)
+explains how switches determine their root port based on root cost 
 
 The root cost is the total cost of the outgoing interfaces along the path to the root bridge. SW1 is the **root bridge**, so it has a cost of 0 on all interfaces.
 
@@ -235,9 +239,11 @@ In that case, the interface connected to the neighbor with the lowest bridge ID 
 
 STP Port ID = port priority (default 128) + port number. In this case the port number is used as a tiebreaker if the priorities tie. Usually you dont need to worry about it, so you can just look at the port number. 
 
-27:21 screenshot
+![image](https://github.com/user-attachments/assets/222c3241-416d-4486-a459-f937a5430aa3)
 
-28:42 screenshots 
+
+![image](https://github.com/user-attachments/assets/e78e60b1-b92c-45bc-8bcb-ac56928951b4)
+
 show step 3) 
 
 **Every collision domain has a single SPT designated port.** Which we use switches each link is a separate collison domain. 
