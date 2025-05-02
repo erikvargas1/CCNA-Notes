@@ -189,34 +189,58 @@ When a switch is powered on, it assumes it is the root bridge. It will only give
 
 The reason all switches send BPDUs at first is because they all think they are the root bridge.
 
-So far we have covered the first step of the spanning-tree’s process. To Review:
+sucks to sucks
 
-`Step 1:` the switch with the lowest bridge ID is elected as the root bridge. All ports on the root bridge are designated ports, so they are in a forwarding state. It’s important that this is the first step that spanning tree takes, because the rest of the steps depend on knowing which switch is the root bridge.
-
-`Step 2:` All other switches will select **ONE** of its ports to be its ‘root port’ (forwarding state). So, that means there is one root port on each switch in the network, EXCEPT on the root bridge. Ports across from the root port are always "Designated ports".
-
-The first criteria for root port selection is the port with the lowest root cost.
-
-What if a switch has multiple ports with the same root cost? In that case, the interface connected to the neighbor with the lowest bridge ID will be selected as the root port.
+## The first criteria for root port selection is the port with the lowest root cost.
 
 The interface with the lowest root cost will be the root port. Root ports are also in a forwarding state.
 
 **Now let’s talk about what that ‘root cost’ is?**
-remember these path costs for the exam 
+
+**Remember these path costs for the exam** 
 
 screenshot 21:29
 
+-----
+screenshot 22:46 | 22:59 explains how switches determine their root port based on root cost 
 
-screenshot 22:46
+The root cost is the total cost of the outgoing interfaces along the path to the root bridge. SW1 is the **root bridge**, so it has a cost of 0 on all interfaces.
 
-The root cost is the total cost of the outgoing interfaces along the path to the root bridge. SW1 is the root bridge, so it has a cost of 0 on all interfaces.
+The ports connected to another switch's root port MUST be designated. Because the root port is the swtich's path to the root bridge, another switch must not block it. 
 
---
+----
 
+So far we have covered the first step of the spanning-tree’s process. To Review:
 
+`Step 1:` The switch with the lowest bridge ID is elected as the **root bridge.** All ports on the root bridge are **designated ports,** so they are in a forwarding state. It’s important that this is the first step that spanning tree takes, because the rest of the steps depend on knowing which switch is the root bridge. 
 
+Root Bridge selection:
+1: Lowest bridge ID
 
+`Step 2:` All other switches will select **ONE** of its ports to be its ‘root port’ (forwarding state). So, that means there is **one root port on each switch in the network**, EXCEPT on the root bridge. **Ports across from the root port** are always "Designated ports".
 
+Root port selection: 
+1: Lowest **root cost**
+
+**What if a switch has multiple ports with the same root cost?*
+In that case, the interface connected to the neighbor with the lowest bridge ID will be selected as the root port.
+
+2) Lowest neighbor **bridge ID (priority)** 
+
+26:16 explains steps 1-2 
+
+*What if two switches have two connections between them, so both the root coost and the neighbor bridge ID are the same?*
+
+3) Lowest neighbor **port ID**
+
+STP Port ID = port priority (default 128) + port number. In this case the port number is used as a tiebreaker if the priorities tie. Usually you dont need to worry about it, so you can just look at the port number. 
+
+27:21 screenshot
+
+28:42 screenshots 
+show step 3) 
+
+**Every collision domain has a single SPT designated port.** Which we use switches each link is a separate collison domain. 
 
 
 
