@@ -148,50 +148,44 @@ When a switch receives a untagged frame on a trunk port, it assumes the frame be
 ------
 ## Day 20 Spanning tree protocol
 
-**Since STP is so important switches from ALL vendors run STP by default.**
+`Since STP is so important switches from ALL vendors run STP by default.`
 
 STP prevents Layer 2 **loops** (broadcast storm) by placing redundant ports in a **blocking state**, essentialy disabling the interface. These interfaces act as backups that can enter a forwarding state if an active (currently forwarding) interface fails.
 
 Interfaces in a **forwarding state** behave normally. They send and receive all normal traffic. 
 
-However, **Interfaces in a blocking state** only send or receive **STP messages** `(called BPDUs = Bridge Protocol Data Units)`, and some other specific traffic.
+However, **Interfaces in a blocking state** only send or receive **STP messages** called `(BPDUs = Bridge Protocol Data Units)`, and some other specific traffic.
 
 By selecting which ports are **forwarding** and which ports are **blocking,** STP creates a single path to/from each point in the network. This prevents layer 2 loops. 
 
 -------
 ##  Spanning tree protocol
 
-STP-enabled switches send/receive **Hello BPDUs** out of all interfaces, the default timer is 2 seconds 
-(the switch will send a Hello BPDU out of every interface, once every 2 seconds)
-
-If a switch receives a *Hello BPDU* on an interface, it knows that the interface is connected to another switch.. **(routers, PCs, etc do not use STP, so they do not send Hello BPDUs).**
+STP-enabled switches send/receive **Hello BPDUs** out of all interfaces, the default timer is 2 seconds. If a switch receives a *Hello BPDU* on an interface, it knows that the interface is connected to another switch.. `(routers, PCs, etc do not use STP, so they do not send Hello BPDUs).`
 
 **What are these BPDUs used for?**
-- Switches use one field in the STP BPDU, the **Bridge ID** field, to elect a **root bridge** for the network.
+- Switches use the STP BPDU **Bridge ID** field, to elect a **root bridge** for the network.
 - The switch with the **lowest Bridge ID** becomes the root bridge
 
 
-So, as I mentioned previously STP puts switch ports in either a **blocking** or **forwarding** state, to avoid Layer 2 loops in the network. However **ALL ports on the root bridge are put in a forwarding state, and other switches in the topology must have a path to reach the root bridge.**
+So, as I mentioned previously STP puts switch ports in either a **blocking** or **forwarding** state, to avoid Layer 2 loops in the network. 
 
-![image](https://github.com/user-attachments/assets/add81076-e56d-4e6e-9b34-57f681d9046a)
+`However ALL ports on the root bridge are put in a forwarding state, and other switches in the topology must have a path to reach the root bridge.`
 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/add81076-e56d-4e6e-9b34-57f681d9046a">
 
-As I said before, the switch with the lowest bridge ID becomes the root bridge, so therefore by default the switch with the lowest MAC address becomes the root bridge. This is with default settings. We can manipulate the switch election process by manually changing the bridge ID number to a lower number, so the switch we want to win becomes the root bridge. 
+> The bridge priority has been updated to be made of two parts, the bridge priority which is 4 bits, and the ‘extended system ID’, which is just the VLAN ID, which is 12 bits
 
-![image](https://github.com/user-attachments/assets/5241ef3a-8a2f-47b6-b8ab-b86f9e359734)
-
-
-the bridge priority has been updated to be made of two parts, the bridge priority which is 4 bits, and the ‘extended system ID’, which is just the VLAN ID, which is 12 bits
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/5241ef3a-8a2f-47b6-b8ab-b86f9e359734">
 
 ----
 
 All interfaces on the root bridge are **designated ports.** Designated ports are in a forwarding state. 
 
-When a switch is powered on, it assumes it is the root bridge. It will only give up its position if it receives a "superior BPDU"(lower bridge ID). Once the topology has converged and all switches agree on the root bridge, only the root bridge sends BPDUs. 
+When a switch is powered on, it assumes it is the root bridge. It will only give up its position if it receives a "superior BPDU" (lower bridge ID). Once the topology has converged and all switches agree on the root bridge, only the root bridge sends BPDUs. 
 
 The reason all switches send BPDUs at first is because they all think they are the root bridge.
 
-sucks to sucks
 
 ## The first criteria for root port selection is the port with the lowest root cost.
 
@@ -203,14 +197,12 @@ The interface with the lowest root cost will be the root port. Root ports are al
 
 ![image](https://github.com/user-attachments/assets/8e2fa1da-8210-487b-a357-4cb884203636)
 
-
 -----
+## Explains how switches determine their root port based on root cost 
+
 ![image](https://github.com/user-attachments/assets/18ff38ea-e03b-4868-95d8-76b3f13bb603)
-explains how switches determine their root port based on root cost 
 
-The root cost is the total cost of the outgoing interfaces along the path to the root bridge. SW1 is the **root bridge**, so it has a cost of 0 on all interfaces.
-
-The ports connected to another switch's root port MUST be designated. Because the root port is the swtich's path to the root bridge, another switch must not block it. 
+The root cost is the total cost of the outgoing interfaces along the path to the root bridge. SW1 is the **root bridge**, so it has a cost of 0 on all interfaces. The ports connected to another switch's root port MUST be designated. Because the root port is the swtich's path to the root bridge, another switch must not block it. 
 
 ----
 
@@ -218,13 +210,15 @@ So far we have covered the first step of the spanning-tree’s process. To Revie
 
 `Step 1:` The switch with the lowest bridge ID is elected as the **root bridge.** All ports on the root bridge are **designated ports,** so they are in a forwarding state. It’s important that this is the first step that spanning tree takes, because the rest of the steps depend on knowing which switch is the root bridge. 
 
-Root Bridge selection:
-1: Lowest bridge ID
+**Root Bridge selection:**
+*1: Lowest bridge ID*
 
-`Step 2:` All other switches will select **ONE** of its ports to be its ‘root port’ (forwarding state). So, that means there is **one root port on each switch in the network**, EXCEPT on the root bridge. **Ports across from the root port** are always "Designated ports".
+----
 
-Root port selection: 
-1: Lowest **root cost**
+`Step 2:` All other switches will select **ONE** of its ports to be its **‘root port’ (forwarding state).** So, that means there is **one root port on each switch in the network**, EXCEPT on the root bridge. **Ports across from the root port** are always "Designated ports".
+
+**Root port selection: **
+*1: Lowest root cost*
 
 **What if a switch has multiple ports with the same root cost?*
 In that case, the interface connected to the neighbor with the lowest bridge ID will be selected as the root port.
@@ -244,7 +238,7 @@ STP Port ID = port priority (default 128) + port number. In this case the port n
 
 ![image](https://github.com/user-attachments/assets/e78e60b1-b92c-45bc-8bcb-ac56928951b4)
 
-show step 3) 
+
 
 **Every collision domain has a single SPT designated port.** Which we use switches each link is a separate collison domain. 
 
