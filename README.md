@@ -211,7 +211,8 @@ So far we have covered the first step of the spanning-tree’s process. To Revie
 `Step 1:` The switch with the lowest bridge ID is elected as the **root bridge.** All ports on the root bridge are **designated ports,** so they are in a forwarding state. It’s important that this is the first step that spanning tree takes, because the rest of the steps depend on knowing which switch is the root bridge. 
 
 **Root Bridge selection:**
-*1: Lowest bridge ID*
+
+**1: Lowest bridge ID**
 
 ----
 
@@ -219,18 +220,17 @@ So far we have covered the first step of the spanning-tree’s process. To Revie
 
 **Root port selection: **
 
-*1: Lowest root cost*
+**1: Lowest root cost**
 
-**What if a switch has multiple ports with the same root cost?**
-In that case, the interface connected to the neighbor with the lowest bridge ID will be selected as the root port.
+**What if a switch has multiple ports with the same root cost?** In that case, the interface connected to the neighbor with the lowest bridge ID will be selected as the root port.
 
-*2) Lowest neighbor bridge ID (priority)* 
+**2) Lowest neighbor bridge ID (priority)**
 
 ![image](https://github.com/user-attachments/assets/a51d27fc-d4a7-4703-a472-c2e4395e9349)
 
 **What if two switches have two connections between them, so both the root coost and the neighbor bridge ID are the same?**
 
-*3) Lowest neighbor port ID*
+**3) Lowest neighbor port ID**
 
 STP Port ID = port priority (default 128) + port number. In this case the port number is used as a tiebreaker if the priorities tie. Usually you dont need to worry about it, so you can just look at the port number. 
 
