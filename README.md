@@ -234,12 +234,19 @@ So far we have covered the first step of the spanning-tree’s process. To Revie
 
 STP Port ID = port priority (default 128) + port number. In this case the port number is used as a tiebreaker if the priorities tie. Usually you dont need to worry about it, so you can just look at the port number. 
 
+
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/222c3241-416d-4486-a459-f937a5430aa3">
 
-
+-------
 
 **Every collision domain has a single SPT designated port.** Which we use switches each link is a separate collison domain. 
 
+![image](https://github.com/user-attachments/assets/f2789ce3-5faf-4a63-a5a3-5ed86b9fbb58)
 
+-----
+## OVERVIEW STP Proccess 
+**So, here is the process for selecting the different port roles and states in spanning tree.**
+
+![image](https://github.com/user-attachments/assets/f62dbdcf-f29e-4226-a316-657df11bc2bd)
 
 
