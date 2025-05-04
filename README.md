@@ -195,12 +195,12 @@ The interface with the lowest root cost will be the root port. Root ports are al
 
 **Remember these path costs for the exam** 
 
-![image](https://github.com/user-attachments/assets/8e2fa1da-8210-487b-a357-4cb884203636)
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/8e2fa1da-8210-487b-a357-4cb884203636">
 
 -----
 ## Explains how switches determine their root port based on root cost 
 
-![image](https://github.com/user-attachments/assets/18ff38ea-e03b-4868-95d8-76b3f13bb603)
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/18ff38ea-e03b-4868-95d8-76b3f13bb603">
 
 The root cost is the total cost of the outgoing interfaces along the path to the root bridge. SW1 is the **root bridge**, so it has a cost of 0 on all interfaces. The ports connected to another switch's root port MUST be designated. Because the root port is the swtich's path to the root bridge, another switch must not block it. 
 
@@ -226,18 +226,15 @@ So far we have covered the first step of the spanning-tree’s process. To Revie
 
 **2) Lowest neighbor bridge ID (priority)**
 
-![image](https://github.com/user-attachments/assets/a51d27fc-d4a7-4703-a472-c2e4395e9349)
-
 **What if two switches have two connections between them, so both the root coost and the neighbor bridge ID are the same?**
 
 **3) Lowest neighbor port ID**
 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/e78e60b1-b92c-45bc-8bcb-ac56928951b4">
+
 STP Port ID = port priority (default 128) + port number. In this case the port number is used as a tiebreaker if the priorities tie. Usually you dont need to worry about it, so you can just look at the port number. 
 
-![image](https://github.com/user-attachments/assets/222c3241-416d-4486-a459-f937a5430aa3)
-
-
-![image](https://github.com/user-attachments/assets/e78e60b1-b92c-45bc-8bcb-ac56928951b4)
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/222c3241-416d-4486-a459-f937a5430aa3">
 
 
 
