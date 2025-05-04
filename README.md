@@ -239,14 +239,14 @@ STP Port ID = port priority (default 128) + port number. In this case the port n
 
 -------
 
-**Every collision domain has a single SPT designated port.** Which we use switches each link is a separate collison domain. 
+*Every collision domain has a single SPT designated port.* Which we use switches each link is a separate collison domain. 
 
-![image](https://github.com/user-attachments/assets/f2789ce3-5faf-4a63-a5a3-5ed86b9fbb58)
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/f2789ce3-5faf-4a63-a5a3-5ed86b9fbb58">
 
 -----
 ## OVERVIEW STP Proccess 
-**So, here is the process for selecting the different port roles and states in spanning tree.**
+So, here is the process for selecting the different port roles and states in spanning tree.
 
-![image](https://github.com/user-attachments/assets/f62dbdcf-f29e-4226-a316-657df11bc2bd)
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/f62dbdcf-f29e-4226-a316-657df11bc2bd">
 
 
