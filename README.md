@@ -247,6 +247,7 @@ STP Port ID = port priority (default 128) + port number. In this case the port n
 ## OVERVIEW STP Proccess 
 So, here is the process for selecting the different port roles and states in spanning tree.
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/f62dbdcf-f29e-4226-a316-657df11bc2bd">
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/ae5700f5-5eaf-42c5-b644-c89bffd65994">
+
 
 
