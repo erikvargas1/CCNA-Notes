@@ -256,9 +256,9 @@ So, here is the process for selecting the different port roles and states in spa
 -----
 ## Day 21 Spanning tree protocol (PART 2)
 
+6:55 screenshots STP port states 
 
-
-
+7:25 STP timers
 
 
 
