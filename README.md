@@ -256,9 +256,48 @@ So, here is the process for selecting the different port roles and states in spa
 -----
 ## Day 21 Spanning tree protocol (PART 2)
 
-6:55 screenshots STP port states 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/880050c4-0714-4379-9603-fe5360ae104a">
 
-7:25 STP timers
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/535e5e31-dec4-4503-a71d-5ac80fd91a83">
+
+Cisco’s PVST+ uses the destination MAC address of ```01:00.0c:cc:cc:cd``` for its BPDUs. Modern Cisco switches run rapid-PVST by default, and usually there is no reason to change it.
+
+Regular STP (NOT Cisco's PVST+) uses a destination MAC address of ```0180.c200.0000```
+
+
+<img width="500" alt="https://github.com/user-attachments/assets/03753077-f30b-4746-8bca-516ef3333b25">
+
+PortFast allows a port to move immediately to the Forwarding state, bypassing **Listening and Learning.** If used, it must be enabled only on ports **connected to end hosts.** (this can save time because Listening and Learning takes a total of 15 seconds each)
+If enabled on a port connected to another switch it could cause a Layer 2 loop.
+
+So, PortFast is a great feature for getting a switchport connected to an end host running quickly without having to wait 30 seconds. However, it can still be a risk. What if an employee plugs another switch into the network like this?
+
+<img width="500" alt="https://github.com/user-attachments/assets/e4c2bb10-58d3-43eb-b714-480d8acfa357">
+
+This employee doesn’t necessarily have malicious intent, they could just be unaware of exactly what they are doing. Because PortFast is putting these interfaces into a forwarding state, a Layer 2 loop is formed. PortFast can also cause loops if the network cabling is changed without proper caution, perhaps a host is moved to a different switchport and a switch is connected to its old port.
+
+However, there is an additional spanning tree optional feature that we can enable to protect against such loops. It’s called **BPDU Guard.**
+
+BPDU Guard: If an interface with BPDU Guard enabled receives a BPDU from another switch, the interface will be shut down to prevent a loop from forming.
+
+<img width="500" alt="https://github.com/user-attachments/assets/39c6446a-e000-4d9f-8ae3-fe6edbbd0083">
+
+You can see what happens when a BPDU arrives on a BPDU guard-enabled port. The port is disabled, it is effectively shut down.
+**What if you want to enable the port again?** To enable a port that was disabled by BPDU guard, simply **SHUTDOWN**, and then **NO SHUTDOWN**
+
+## Not part of the CCNA 
+At least know the name and basic purpose of, just in case they are mentioned in the exam.
+<img width="500" alt="https://github.com/user-attachments/assets/0c6526a9-6307-4f10-b9db-5229e0eebdf7">
+
+
+
+You can also manually configure the root bridge by manipulating the bridge priority of a switch. With these MAC addresses and the default priority values, SW1 is the root bridge. However, we could configure SW3 to be the root bridge. We could also configure something called a ‘secondary’ root bridge, which will be next in line to become the root bridge if the current root bridge fails.
+
+Let’s see how to configure that.
+
+<img width="500" alt="https://github.com/user-attachments/assets/70e9cfe8-9c5d-48a6-892f-a3d8f548a6ed">
+
+
 
 
 
