@@ -291,6 +291,7 @@ Not part of the CCNA. At least know the name and basic purpose of, just in case 
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/64bf6f98-67cd-4367-bf65-3a9c9904f1c4">
 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/7593282f-f5f0-405f-bd3e-86090efc37be">
 </details>
 
 What is BPDU Guard? 
