@@ -293,7 +293,8 @@ Not part of the CCNA. At least know the name and basic purpose of, just in case 
 
 </details>
 
-BPDU Guard: If an interface with BPDU Guard enabled receives a BPDU from another switch, the interface will be shut down to prevent a loop from forming.
+What is BPDU Guard? 
+If an interface with BPDU Guard enabled receives a BPDU from another switch, the interface will be shut down to prevent a loop from forming.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/b3ec38d1-39d0-44cd-80c7-afde94864f82">
 
