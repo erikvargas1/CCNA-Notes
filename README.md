@@ -299,12 +299,12 @@ If an interface with BPDU Guard enabled receives a BPDU from another switch, the
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/b3ec38d1-39d0-44cd-80c7-afde94864f82">
 
+You can see what happens when a BPDU arrives on a BPDU guard-enabled port. The port is disabled, it is effectively shut down.
+**What if you want to enable the port again?** To enable a port that was disabled by BPDU guard, simply **SHUTDOWN**, and then **NO SHUTDOWN**
+
 ----
 
 **Primary & Secondary root bridge**
-
-You can see what happens when a BPDU arrives on a BPDU guard-enabled port. The port is disabled, it is effectively shut down.
-**What if you want to enable the port again?** To enable a port that was disabled by BPDU guard, simply **SHUTDOWN**, and then **NO SHUTDOWN**
 
 You can also manually configure the root bridge by manipulating the bridge priority of a switch. With these MAC addresses and the default priority values, SW1 is the root bridge. However, we could configure SW3 to be the root bridge. We could also configure something called a ‘secondary’ root bridge, which will be next in line to become the root bridge if the current root bridge fails.
 
