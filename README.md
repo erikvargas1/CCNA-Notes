@@ -85,7 +85,7 @@ A more specific definition: A LAN is a single **broadcast domain**, including al
 
 **A broadcast domain:** is the group of devices, which will receive a broadcast frame (dest MAC FFFF:FFFF:FFFF) sent by any one of its members.
 
-![Screenshot 2025-04-28 221449](https://github.com/user-attachments/assets/ae653aec-7140-44fd-b9bc-8fc8aa4c6484)
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/ae653aec-7140-44fd-b9bc-8fc8aa4c6484">
 
 **NOTES broadcast traffic** 
 - Performance: Lots of unnecessary broadcast traffic can reduce network performance. 
@@ -142,7 +142,7 @@ When a switch receives a untagged frame on a trunk port, it assumes the frame be
 
 **its very important that the native VLAN matches between swtiches.** Switches will still forward traffic if there is native VLAN mismatch, which will cause traffic problems.
 
-![Screenshot 2025-04-28 232948](https://github.com/user-attachments/assets/df6105cb-5a5d-4301-8d24-d372129c165e)
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/df6105cb-5a5d-4301-8d24-d372129c165e">
 
 
 ------
