@@ -296,6 +296,7 @@ BPDU Guard: If an interface with BPDU Guard enabled receives a BPDU from another
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/b3ec38d1-39d0-44cd-80c7-afde94864f82">
 
+
 **Primary & Secondary root bridge**
 
 You can see what happens when a BPDU arrives on a BPDU guard-enabled port. The port is disabled, it is effectively shut down.
