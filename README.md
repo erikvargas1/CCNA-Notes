@@ -255,6 +255,7 @@ So, here is the process for selecting the different port roles and states in spa
 ## Day 21 Spanning tree protocol (PART 2)
 
 **Remember these for the Exam**
+
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/880050c4-0714-4379-9603-fe5360ae104a">
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/535e5e31-dec4-4503-a71d-5ac80fd91a83">
