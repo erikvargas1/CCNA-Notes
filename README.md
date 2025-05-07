@@ -254,6 +254,7 @@ So, here is the process for selecting the different port roles and states in spa
 -----
 ## Day 21 Spanning tree protocol (PART 2)
 
+**Remember these for the Exam**
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/880050c4-0714-4379-9603-fe5360ae104a">
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/535e5e31-dec4-4503-a71d-5ac80fd91a83">
@@ -262,8 +263,9 @@ Cisco’s PVST+ uses the destination MAC address of ```01:00.0c:cc:cc:cd``` for 
 
 Regular STP (NOT Cisco's PVST+) uses a destination MAC address of ```0180.c200.0000```
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/c6bea762-3be7-4b67-8013-4afdf41f6441">
+------
 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/c6bea762-3be7-4b67-8013-4afdf41f6441">
 
 PortFast allows a port to move immediately to the Forwarding state, bypassing **Listening and Learning.** If used, it must be enabled only on ports **connected to end hosts.** (this can save time because Listening and Learning takes a total of 15 seconds each)
 If enabled on a port connected to another switch it could cause a Layer 2 loop.
@@ -271,7 +273,6 @@ If enabled on a port connected to another switch it could cause a Layer 2 loop.
 So, PortFast is a great feature for getting a switchport connected to an end host running quickly without having to wait 30 seconds. However, it can still be a risk. What if an employee plugs another switch into the network like this?
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/a5ce033f-88e4-4001-b4a1-c12512444049">
-
 
 This employee doesn’t necessarily have malicious intent, they could just be unaware of exactly what they are doing. Because PortFast is putting these interfaces into a forwarding state, a Layer 2 loop is formed. PortFast can also cause loops if the network cabling is changed without proper caution, perhaps a host is moved to a different switchport and a switch is connected to its old port.
 
