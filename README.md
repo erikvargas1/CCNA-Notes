@@ -256,8 +256,6 @@ So, here is the process for selecting the different port roles and states in spa
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/880050c4-0714-4379-9603-fe5360ae104a">
 
------
-
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/535e5e31-dec4-4503-a71d-5ac80fd91a83">
 
 Cisco’s PVST+ uses the destination MAC address of ```01:00.0c:cc:cc:cd``` for its BPDUs. Modern Cisco switches run rapid-PVST by default, and usually there is no reason to change it.
