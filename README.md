@@ -249,6 +249,8 @@ So, here is the process for selecting the different port roles and states in spa
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/ae5700f5-5eaf-42c5-b644-c89bffd65994">
 
+------
+
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/9d12a61e-a801-4113-be36-c2ccaacb661d">
 
 -----
