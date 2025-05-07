@@ -268,6 +268,8 @@ Regular STP (NOT Cisco's PVST+) uses a destination MAC address of ```0180.c200.0
 
 ------
 
+**Port Fast**
+
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/c6bea762-3be7-4b67-8013-4afdf41f6441">
 
 PortFast allows a port to move immediately to the Forwarding state, bypassing **Listening and Learning.** If used, it must be enabled only on ports **connected to end hosts.** (this can save time because Listening and Learning takes a total of 15 seconds each)
@@ -281,28 +283,27 @@ This employee doesn’t necessarily have malicious intent, they could just be un
 
 However, there is an additional spanning tree optional feature that we can enable to protect against such loops. It’s called **BPDU Guard.**
 
+**BPDU Guard**
+
+<details>
+Not part of the CCNA. At least know the name and basic purpose of, just in case they are mentioned in the exam.
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/64bf6f98-67cd-4367-bf65-3a9c9904f1c4">
+
+</details>
+
 BPDU Guard: If an interface with BPDU Guard enabled receives a BPDU from another switch, the interface will be shut down to prevent a loop from forming.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/b3ec38d1-39d0-44cd-80c7-afde94864f82">
 
+**Primary & Secondary root bridge**
 
 You can see what happens when a BPDU arrives on a BPDU guard-enabled port. The port is disabled, it is effectively shut down.
 **What if you want to enable the port again?** To enable a port that was disabled by BPDU guard, simply **SHUTDOWN**, and then **NO SHUTDOWN**
 
-## Not part of the CCNA 
-At least know the name and basic purpose of, just in case they are mentioned in the exam.
-
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/64bf6f98-67cd-4367-bf65-3a9c9904f1c4">
-
-
 You can also manually configure the root bridge by manipulating the bridge priority of a switch. With these MAC addresses and the default priority values, SW1 is the root bridge. However, we could configure SW3 to be the root bridge. We could also configure something called a ‘secondary’ root bridge, which will be next in line to become the root bridge if the current root bridge fails.
 
-Let’s see how to configure that.
-
-
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/ac7a6a24-2f95-473d-97b8-481f50755e05">
-
-
 
 
 
