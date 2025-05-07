@@ -296,6 +296,7 @@ BPDU Guard: If an interface with BPDU Guard enabled receives a BPDU from another
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/b3ec38d1-39d0-44cd-80c7-afde94864f82">
 
+----
 
 **Primary & Secondary root bridge**
 
@@ -305,6 +306,5 @@ You can see what happens when a BPDU arrives on a BPDU guard-enabled port. The p
 You can also manually configure the root bridge by manipulating the bridge priority of a switch. With these MAC addresses and the default priority values, SW1 is the root bridge. However, we could configure SW3 to be the root bridge. We could also configure something called a ‘secondary’ root bridge, which will be next in line to become the root bridge if the current root bridge fails.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/ac7a6a24-2f95-473d-97b8-481f50755e05">
-
 
 
