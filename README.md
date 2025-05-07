@@ -283,6 +283,7 @@ This employee doesn’t necessarily have malicious intent, they could just be un
 
 However, there is an additional spanning tree optional feature that we can enable to protect against such loops. It’s called **BPDU Guard.**
 
+------
 **BPDU Guard**
 
 <details>
