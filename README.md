@@ -352,9 +352,7 @@ IF BPDU Filter & BPDU Guard are enabled in `global config mode` and the port rec
 
 **Root Guard**
 
-*Root Guard:* Prevents a port from becoming a Root Port by disabling it if superior BPDUs are received, thereby enforcing the current Root Bridge.
-
-STP prevent loops by electing a root bridge and ensuring that each other switch has **only one valid path** to reach it.
+*Root Guard:* Prevents a port from becoming a Root Port by disabling it if superior BPDUs are received. This enforces the current Root Bridge and protects the STP topology.
 
 <details>
 
@@ -362,9 +360,11 @@ STP prevent loops by electing a root bridge and ensuring that each other switch 
 
 </details>
 
-Root Guard can be configured to protect your STP topology by preventing your switches from accepting a superior BPDUs from switches outside of your control. **Superior BPDUs** (BPDU that is claiming a better root bridge ID)
+Root Guard can be configured to protect your STP topology by preventing your switches from accepting a superior BPDUs from switches outside of your control. 
 
-If you want to ensure that the Root Bridge remains in your LAN, you can configure Root Guard on the ports connected to switches outside of your control 
+**Superior BPDUs** (BPDU that is claiming a better root bridge ID)
+
+If you want to ensure that the Root Bridge remains in your LAN, you can configure Root Guard on the ports connected to switches outside of your control (service provider or client). 
 
 
 
