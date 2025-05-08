@@ -353,6 +353,8 @@ IF BPDU Filter & BPDU Guard are enabled in `global config mode` and the port rec
 **Root Guard**
 
 *Root Guard:* Prevents a port from becoming a Root Port by disabling it if superior BPDUs are received. This enforces the current Root Bridge and protects the STP topology.
+- If the port receives a superior BPDU, it becomes Broken (BKN) / Root Inconsistent (ROOT_Inc).
+- If the port stops receiving superior BPDUs, it will automatically recover. 
 
 <details>
 
