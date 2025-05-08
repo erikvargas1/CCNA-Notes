@@ -352,9 +352,9 @@ IF BPDU Filter & BPDU Guard are enabled in `global config mode` and the port rec
 
 **Root Guard**
 
-*Root Guard* Prevents a port from becoming a Root Port by disabling it if superior BPDUs are received, thereby enforcing the current Root Bridge.
+*Root Guard:* Prevents a port from becoming a Root Port by disabling it if superior BPDUs are received, thereby enforcing the current Root Bridge.
 
-STP prevent loos by electing a root bridge and ensuring that each other switch has **only one valid path** to reach it.
+STP prevent loops by electing a root bridge and ensuring that each other switch has **only one valid path** to reach it.
 
 <details>
 
