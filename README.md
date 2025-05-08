@@ -368,11 +368,23 @@ Root Guard can be configured to protect your STP topology by preventing your swi
 
 If you want to ensure that the Root Bridge remains in your LAN, you can configure Root Guard on the ports connected to switches outside of your control (service provider or client). 
 
+----
+**Lecture: Loop Guard**
 
+**Loop Guard**
 
+*Loop Guard* protects the network from loops by blocking a port if it unexpectedly stops receiving BPDUs.
+- Software bug can prevent a switch from sending BPDUs
+- A Hardware issue causing a Unidirectional Link (Fiber optic cables)
 
+**Unidirectional Link** is network link where data transmission occurs in only one direction.
+- Typically caused by Layer 1 issues on fiber-optic cables. If the connected switches don’t detect the issue and disable their interfaces it can result in a unidirectional link. This prevents BPDUs from reaching the neighboring switch
+- IF a Root or Non-Designated port stops receiving BPDUs, it will become a Designated port, resulting in Layer 2 loops.
 
+if a Loop Guard enabled port stops receiving BPDUs, it enters the Broken (Loop Inconsistent) state effectively disabling the port.
+- If the port starts receiving BPDUs again, it will be automatically re-enabled 
 
-
+Loop Guard and Root Guard are mutually exclusive (meaning one can be active at a time on each port)
+- if Loop Guard is configured on a port/ports and you then configure Root Guard, Loop Guard will be disabled, and vice versa.
 
 
