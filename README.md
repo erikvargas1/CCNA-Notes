@@ -279,9 +279,7 @@ So, PortFast is a great feature for getting a switchport connected to an end hos
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/a5ce033f-88e4-4001-b4a1-c12512444049">
 
-This employee doesn’t necessarily have malicious intent, they could just be unaware of exactly what they are doing. Because PortFast is putting these interfaces into a forwarding state, a Layer 2 loop is formed. PortFast can also cause loops if the network cabling is changed without proper caution, perhaps a host is moved to a different switchport and a switch is connected to its old port.
-
-However, there is an additional spanning tree optional feature that we can enable to protect against such loops. It’s called **BPDU Guard.**
+Because PortFast is putting these interfaces into a forwarding state, a Layer 2 loop is formed. However, there is an additional spanning tree optional feature that we can enable to protect against such loops. It’s called **BPDU Guard.**
 
 ------
 **BPDU Guard**
