@@ -311,4 +311,66 @@ You can also manually configure the root bridge by manipulating the bridge prior
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/ac7a6a24-2f95-473d-97b8-481f50755e05">
 
+------
+**STP Optional Features**
+
+**Lecture: PortFast**
+- A PortFast-enabled port still sends BPDUs and will operate like a regular STP Port if it receives BPDUs from a neighbor.
+- if an end user carelessly connects a switcch to a port meant for end hosts, it could affect the STP topology. To prevent this use *BPDU Guard*
+
+**Lecture: BPDU Guard & BPDU Filter**
+
+**BPDU Guard**
+
+*BPDU Guard,* Disables a port if it receives a BPDU, protecting the STP topology by preventing unauthorized devices from becoming part of the network (someone plugs a switch into a portfast enabled port)
+- if the port receives a BPDU, it enters the **err-disabled** state, effectively disabling the port. 
+- err-disabled port can be re-enabled by two ways:
+
+**1.** Manually: `shutdown` then `no shutdown`.
+
+**2.** Automatic: ErrDisable Recovery
+  
+---
+
+**BPDU Filter**
+
+*BPDU Filter,* stops a port from sending and receiving BPDUs 
+
+**SWITCHES BY DEFAULT:** A switch port connected to an end host continues sending BPDUs every 2 seconds by default regardless of whether PortFast and/or BPDU Guard are enabled.
+
+BPDU filters solves this by preventing a port from sending BPDUs. 
+- Unlike *BPDU Guard*, it does not disable the port if it receives a BPDU
+
+Both BPDU Guard and BPDU Filter can be enabled on the same port at the same time. 
+
+IF BPDU Filter & BPDU Guard are enabled in `global config mode` and the port receives a BPDU, the following happens:
+- BPDU Filter is automatically disabled
+- BPDU Guard is then triggered, and the port is **err-disabled** (shut down for safety).
+
+-----------
+**Lecture: Root Guard**
+
+**Root Guard**
+
+*Root Guard* Prevents a port from becoming a Root Port by disabling it if superior BPDUs are received, thereby enforcing the current Root Bridge.
+
+STP prevent loos by electing a root bridge and ensuring that each other switch has **only one valid path** to reach it.
+
+<details>
+
+![image](https://github.com/user-attachments/assets/21f447c0-3fff-4827-ad24-adeb9fb4bd05)
+
+</details>
+
+Root Guard can be configured to protect your STP topology by preventing your switches from accepting a superior BPDUs from switches outside of your control. **Superior BPDUs** (BPDU that is claiming a better root bridge ID)
+
+If you want to ensure that the Root Bridge remains in your LAN, you can configure Root Guard on the ports connected to switches outside of your control 
+
+
+
+
+
+
+
+
 
