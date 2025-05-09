@@ -377,4 +377,18 @@ if a Loop Guard enabled port stops receiving BPDUs, it enters the Broken (Loop I
 Loop Guard and Root Guard are mutually exclusive (meaning one can be active at a time on each port)
 - if Loop Guard is configured on a port/ports and you then configure Root Guard, Loop Guard will be disabled, and vice versa.
 
+-----
+
+## Day 22 Rapid Spanning Tree Protocol (RSTP)
+
+RSTP is not timer-based spanning tree algorithm like 802.1D STP.Therefore, RSTP offers an improvement over the 30 seconds or more that 802.1D takes to move link to forwarding. The heart of the protocol is a new bridge-bridge handshake mechanism, which allows ports to move directly to forwarding. 
+
+RSTP uses a ‘handshake’ mechanism, which allows switches to actively negotiate with&nbsp; other switches and move ports immediately to the forwarding state if appropriate
+
+11:15 port states updateded 
+
+**RSTP Port Roles**
+- THe **root port** role selection and role remains unchanged in RSTP
+- The **Designated port** role selection and role remains unchanged in RSTP
+
 
