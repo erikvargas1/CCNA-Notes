@@ -381,14 +381,54 @@ Loop Guard and Root Guard are mutually exclusive (meaning one can be active at a
 
 ## Day 22 Rapid Spanning Tree Protocol (RSTP)
 
-RSTP is not timer-based spanning tree algorithm like 802.1D STP.Therefore, RSTP offers an improvement over the 30 seconds or more that 802.1D takes to move link to forwarding. The heart of the protocol is a new bridge-bridge handshake mechanism, which allows ports to move directly to forwarding. 
+> Rapid-PVST is the default mode on modern Cisco switches
 
-RSTP uses a ‘handshake’ mechanism, which allows switches to actively negotiate with&nbsp; other switches and move ports immediately to the forwarding state if appropriate
+RSTP is not timer-based spanning tree algorithm like 802.1D STP. Therefore, RSTP offers an improvement over the 30 seconds or more that 802.1D takes to move links to forwarding. The heart of the protocol is a new bridge to bridge handshake mechanism, which allows ports to move directly to forwarding. 
+
+RSTP uses a ‘handshake’ mechanism, which allows switches to actively negotiate with other switches and move ports immediately to the forwarding state if appropriate
 
 11:15 port states updateded 
 
 **RSTP Port Roles**
-- THe **root port** role selection and role remains unchanged in RSTP
+- The **root port** role selection and role remains unchanged in RSTP
 - The **Designated port** role selection and role remains unchanged in RSTP
+- The **Non-Designated port** role was divided into two separate roles in RSTP:: **Alternate port** role and **Backup port** role
+
+The **Alternate port** role functions as a back to the root port. if the root port fails, the switch can immediately move its best alternate port to forwarding as the new root port.
+
+The **Backup port role** functions as a backup for a designated port. 
+
+<details>
+
+How does the switch chooses which port will be the designated port and which will be the backup port? The interface with the lowest port ID will be selected as the designated port, and the other will be the backup port.
+
+ ![image](https://github.com/user-attachments/assets/cec3ab36-7017-4492-8a6f-005ef06621cc)
+
+</details>
+
+-----
+## Note 💡
+In classic STP, only the root bridge originated BPDUs, and other switches just forwarded the BPDUs they received.
+In RAPID STP, ALL switches originate and send their own BPDUs from their designated ports.
+
+<details>
+
+![image](https://github.com/user-attachments/assets/a40c7eda-6da5-419d-94b5-c3f2bf9f3395)
+
+</details>
+
+----
+
+RSTP distinguishes between three different "Link Types". 
+
+**Edge:** An edge port is a port that is connected to an end host. It moves directly to forwarding without negotiation (RSTP built-in portfast). Functions like a classic STP port with PortFast enabled.  *Full duplex mode*
+
+**point-to-point:** This is used for direct connections between two switches. *Full duplex mode*
+
+**Shared:** a connection to a Hub. Must operate in half-duplex mode (you probably won’t use at all).  *Half duplex mode*
+
+
+ Don’t confuse these link types with the spanning tree port roles or port states Basically, the point-to-point and shared link types just distinguish between full and half-duplex connections
+
 
 
