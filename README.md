@@ -427,8 +427,17 @@ RSTP distinguishes between three different "Link Types".
 
 **Shared:** a connection to a Hub. Must operate in half-duplex mode (you probably won’t use at all).  *Half duplex mode*
 
+Don’t confuse these link types with the spanning tree port roles or port states Basically, the point-to-point and shared link types just distinguish between full and half-duplex connections
 
- Don’t confuse these link types with the spanning tree port roles or port states Basically, the point-to-point and shared link types just distinguish between full and half-duplex connections
+------------------
+## Day 23 - EtherChannel
 
+EtherChannel allows you to group multiple physical interfaces into a group which operates as a single logical interface, so they behave as if they are a single interface.
+
+A Layer 2 EtherChannel is a group of switch ports which operate as a single interface.
+
+A Layer 3 EtherChannel is a group of routed port which operate as a single interface, which you assign an IP address to, because it’s Layer 3.
+
+when the bandwidth of the interfaces connected to end hosts is greater than the bandwidth of the connection to the distribution switch(es), this is called oversubscription. Some oversubscription is acceptable, but too much will cause congestion.
 
 
