@@ -432,12 +432,41 @@ Don’t confuse these link types with the spanning tree port roles or port state
 ------------------
 ## Day 23 - EtherChannel
 
-EtherChannel allows you to group multiple physical interfaces into a group which operates as a single logical interface, so they behave as if they are a single interface.
+EtherChannel allows you to group multiple physical interfaces into a group which operates as a single logical interface, so they behave as if they are a single interface. This allows for greater bandwith (each interface's bandwith is combined to form one fast logical interface).
 
 A Layer 2 EtherChannel is a group of switch ports which operate as a single interface.
 
 A Layer 3 EtherChannel is a group of routed port which operate as a single interface, which you assign an IP address to, because it’s Layer 3.
 
-when the bandwidth of the interfaces connected to end hosts is greater than the bandwidth of the connection to the distribution switch(es), this is called oversubscription. Some oversubscription is acceptable, but too much will cause congestion.
+When the bandwidth of the interfaces connected to end hosts is greater than the bandwidth of the connection to the distribution switch(es), this is called **OverSubscription** Some oversubscription is acceptable, but too much will cause congestion.
+
+**How does EtherChannel Load-Balance?** EtherChannel load balances based on "Flows". Flows is a communication between two nodes in the network 
+
+
+The calculation that is done to determine which physical interface to use takes into account a few inputs. You can change the inputs used in the interface selection calculation. Here are the inputs that can be used:
+
+12:27 screenshot 
+Also which methods the switch can use depends on the switch model
+
+---
+
+**There are three methods of EtherChannel configuration on Cisco switches:** 
+
+**PAgP** (Port Aggregation Procotol). Cisco Proprietary protocol and dynamically negotiates the creation/maintenance of the EtherChannel. 
+
+**LACP (Link Aggregation Control).** It is an industry standard protocol **802.3ad** and dynamically negotiates the creation and maintenance of the EtherChannel
+ 
+**Static EtherChannel**
+In this case a protocol isn’t used to determine if an EtherChannel should be formed. Instead, interfaces are statically configured to form an EtherChannel. This is usually avoided, because you want the switches to dynamically maintain the EtherChannel, for example you want the switch to remove an interface from the EtherChannel if there is some sort of problem on the interface.
+
+--------
+
+Up to 8 interfaces can be formed into a single EtherChannel (LACP allows up to 16, but only 8 will be active, the other 8 will be in standby mode, waiting for an active interface to fail)
+
+-------
+
+
+
+
 
 
