@@ -465,6 +465,13 @@ Up to 8 interfaces can be formed into a single EtherChannel (LACP allows up to 1
 
 -------
 
+------------------
+## Day 24 - Dynamic Routing 
+
+
+
+
+
 
 
 
