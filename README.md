@@ -468,6 +468,27 @@ Up to 8 interfaces can be formed into a single EtherChannel (LACP allows up to 1
 ------------------
 ## Day 24 - Dynamic Routing 
 
+**Network Route:** A network route is simply a route to a network or subnet. In other words, a route with a mask length **less than /32.** EX: 192.168.1.0/30 
+
+**Host Route:** A host route is a route to a specific host, a single address, specified with a /32 mask. EX: 192.168.13.1/32
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
