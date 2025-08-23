@@ -484,33 +484,43 @@ If multiple routes to a destination are learned, the router determines which rou
 ----
 
 Dynamic routing protocols can be divided into two main categories, 
-IGP (Interior Gateway Protocol)
+IGP (Interior Gateway Protocol). (EX: OSPF)
 EGP (Exterior Gateway Protocol)
 
-IGPs are used to share routes within a single autonomous system, AS, which is a single organization for example: A Company
+**IGPs** are used to share routes within a single autonomous system, AS, which is a single organization,(ie. a company).
+**EGPs** are used to share routes between different autonomous systems (different companies).
 
-EGPs are used to share routes between different autonomous systems (different companies).
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/2b2cfb1a-300e-44fe-a476-2e4a265b65c6" />
 
-<img width="957" height="381" alt="image" src="https://github.com/user-attachments/assets/2b2cfb1a-300e-44fe-a476-2e4a265b65c6" />
+Within each organization, an **IGP** is used to exchange routing information. However, to exchange routing information between AS’s, an **EGP** is used.
 
+The basic purpose of IGPs and EGPs is the same, to share information about routes to destinations. However they function differently. 
 
-Within each organization, an IGP is used to exchange routing information.
-
-However, to exchange routing information between AS’s, an EGP is used.
-
-The basic purpose of IGPs and EGPs is the same, to share information about routes to
-
-destinations.
-
-However they function differently.
+Note 💡:
+> There is only one type of **EGP algorithm = Path Vector.** And there is only **one EGP** that is used in modern networks That is **(BGP) Border Gateway Protocol.**
 
 
+I’ll repeat, when I say ‘algorithm’ I mean the processes each protocol uses to share route information and choose the best route to each destination.
 
+All routing protocols have the same goal. To share route information and select the best route to each destination. However, the algorithm used to do so is different for each routing protocol.
 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/510442be-796b-43db-a5f5-e01f00fecfb8" />
 
+------
 
+Distance vector protocols were invented before link state protocols, in the early 1980s.
 
+Distance vector protocols operate by sending the following information to their directly connected neighbors.
+--- their known destination networks
+--- And their metric to reach their known destination networks.
 
+This method of sharing route information is often called **‘routing by rumor’.** 
+
+Why the name? When using a distance vector protocol, all the router knows is the routes its neighbors tells it about, and their metric to reach those destinations. The router doesn’t know about the network beyond its neighbors.
+
+The reason for the name ‘distance vector’ is because the routers **only learn the ‘distance’**, which is the **metric**, and the **‘vector’**, which is the direction to send traffic, the next-hop router, of each route.
+
+-----
 
 
 
