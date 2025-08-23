@@ -511,14 +511,16 @@ All routing protocols have the same goal. To share route information and select 
 Distance vector protocols were invented before link state protocols, in the early 1980s.
 
 Distance vector protocols operate by sending the following information to their directly connected neighbors.
+
 --- their known destination networks
+
 --- And their metric to reach their known destination networks.
 
 This method of sharing route information is often called **‘routing by rumor’.** 
 
 Why the name? When using a distance vector protocol, all the router knows is the routes its neighbors tells it about, and their metric to reach those destinations. The router doesn’t know about the network beyond its neighbors.
 
-The reason for the name ‘distance vector’ is because the routers **only learn the ‘distance’**, which is the **metric**, and the **‘vector’**, which is the direction to send traffic, the next-hop router, of each route.
+The reason for the name ‘distance vector’ is because the routers **only learn the ‘distance’**, which is the **metric**, and the **‘vector’**, which is the direction to send traffic, to the next-hop router, of each route.
 
 -----
 
