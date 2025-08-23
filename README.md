@@ -488,6 +488,7 @@ IGP (Interior Gateway Protocol). (EX: OSPF)
 EGP (Exterior Gateway Protocol)
 
 **IGPs** are used to share routes within a single autonomous system, AS, which is a single organization,(ie. a company).
+
 **EGPs** are used to share routes between different autonomous systems (different companies).
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/2b2cfb1a-300e-44fe-a476-2e4a265b65c6" />
