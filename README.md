@@ -472,20 +472,37 @@ Up to 8 interfaces can be formed into a single EtherChannel (LACP allows up to 1
 
 **Host Route:** A host route is a route to a specific host, a single address, specified with a /32 mask. EX: 192.168.13.1/32
 
+A benefit of Dynamic Routing is: Routers will remove invalid routes (The destination network from the route table is replaced with the next-best route).
+
+**Here are a few key points.**
+Routers can use dynamic routing protocols to advertise information about their connected routes as well as routes they have learned from other devices.
+
+They form ‘adjacencies’ , also known as ‘neighbor relationships’ or ‘neighborships’ with adjacent routers to exchange this information.
+
+If multiple routes to a destination are learned, the router determines which route is superior and adds it to the routing table. It uses the ‘metric’ of the route to decide which is superior, and the lower metric is superior.
+
+----
+
+Dynamic routing protocols can be divided into two main categories, 
+IGP (Interior Gateway Protocol)
+EGP (Exterior Gateway Protocol)
+
+IGPs are used to share routes within a single autonomous system, AS, which is a single organization for example: A Company
+
+EGPs are used to share routes between different autonomous systems (different companies).
+
+<img width="957" height="381" alt="image" src="https://github.com/user-attachments/assets/2b2cfb1a-300e-44fe-a476-2e4a265b65c6" />
 
 
+Within each organization, an IGP is used to exchange routing information.
 
+However, to exchange routing information between AS’s, an EGP is used.
 
+The basic purpose of IGPs and EGPs is the same, to share information about routes to
 
+destinations.
 
-
-
-
-
-
-
-
-
+However they function differently.
 
 
 
