@@ -525,6 +525,35 @@ The reason for the name ‘distance vector’ is because the routers **only lear
 
 -----
 
+When using a link state routing protocol, every router creates a ‘connectivity map’ of the network.
+
+To allow this, each router advertises information about its interfaces and its connected networks, to its neighbors. These advertisements are passed along to other routers, until all routers in the network develop the same map of the network. Then, each router independently uses this map to calculate the best routes to each destination.
+
+In link state protocols, each router gets a whole picture of the network so that it can calculate the best routes.
+
+Link state protocols use more resources, more CPU power and memory, on the router, because more information is shared. However, link state protocols tend to be faster in reacting to changes in the network than distance vector protocols.
+
+-----
+**if a router using a dynamic routing protocol learns two different routes to the same destination. How does it determine which is ‘best’?**
+
+As I briefly mentioned before, It uses the metric value of the routes to determine which is best. A lower metric is considered better.
+
+**What if two routes have the same cost, which route would be added to the route table?**
+
+So, if a router learns two (or more) routes via the same routing protocol to the same destination, with the same metric, both will be added to the routing table. Traffic will be load-balanced over both routes. Note: they must be exactly the same destination, the same network address and same prefix length.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
