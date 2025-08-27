@@ -547,6 +547,7 @@ The Blue is the **AD (Administrative Distance)**. The Red is the **Metric**
 ------
 The OSPF protocol has an AD of 110.
 
+<img width="500" alt="image" src="image" src="https://github.com/user-attachments/assets/248347a2-24d5-4ab7-8a61-d2b75a7be48b" />
 
 
 
