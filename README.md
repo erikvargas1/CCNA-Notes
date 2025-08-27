@@ -545,12 +545,10 @@ The Blue is the **AD (Administrative Distance)**. The Red is the **Metric**
 <img width="836" height="83" alt="image" src="https://github.com/user-attachments/assets/32603764-add8-481b-9025-8758ea88d640" />
 
 ------
-The OSPF protocol has an AD of 110.
 
-<img width="500" alt="image" src="image" src="https://github.com/user-attachments/assets/248347a2-24d5-4ab7-8a61-d2b75a7be48b" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/248347a2-24d5-4ab7-8a61-d2b75a7be48b" />
 
-
-
+In most cases a company will only use a single IGP for their network – usually OSPF, but sometimes EIGRP if they only use Cisco equipment. However, in some rare cases they might use two.
 
 
 
