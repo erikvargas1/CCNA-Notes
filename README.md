@@ -536,11 +536,10 @@ Link state protocols use more resources, more CPU power and memory, on the route
 -----
 **if a router using a dynamic routing protocol learns two different routes to the same destination. How does it determine which is ‘best’?**
 
-As I briefly mentioned before, It uses the metric value of the routes to determine which is best. A lower metric is considered better.
+As I briefly mentioned before, It uses the metric value of the routes to determine which is best. **A lower metric is considered better.**
 
-**What if two routes have the same cost, which route would be added to the route table?**
+if a router learns two (or more) routes via the same routing protocol to the same destination, with the same metric, both will be added to the routing table. Traffic will be load-balanced over both routes. This is called **ECMP** (Equal Cost Multi-Path). 
 
-So, if a router learns two (or more) routes via the same routing protocol to the same destination, with the same metric, both will be added to the routing table. Traffic will be load-balanced over both routes. Note: they must be exactly the same destination, the same network address and same prefix length.
 
 
 
