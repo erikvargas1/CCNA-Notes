@@ -538,9 +538,14 @@ Link state protocols use more resources, more CPU power and memory, on the route
 
 As I briefly mentioned before, It uses the metric value of the routes to determine which is best. **A lower metric is considered better.**
 
-if a router learns two (or more) routes via the same routing protocol to the same destination, with the same metric, both will be added to the routing table. Traffic will be load-balanced over both routes. This is called **ECMP** (Equal Cost Multi-Path). 
+if a router learns two (or more) routes via the same routing protocol to the same destination, with the same metric, both will be added to the routing table. Traffic will be load-balanced over both routes. 
+This is called **ECMP (Equal Cost Multi-Path).**  ECMP load-balancing with a dynamic routing protocol.
 
+The Blue is the **AD (Administrative Distance)**. The Red is the **Metric** 
+<img width="836" height="83" alt="image" src="https://github.com/user-attachments/assets/32603764-add8-481b-9025-8758ea88d640" />
 
+------
+The OSPF protocol has an AD of 110.
 
 
 
