@@ -549,4 +549,5 @@ For example, an OSPF route to 192.168.4.0/24 might have a metric of 30, while an
 
 So, **the administrative distance, or AD, is used to determine which routing protocol is preferred**. A lower AD is preferred, and indicates that the routing protocol is considered more ‘trustworthy’, meaning more likely to select good routes.
 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/92ee9160-6772-4860-8a31-95e9eb3c87e8" />
 
