@@ -493,11 +493,13 @@ Dynamic routing protocols can be divided into two main categories: **IGP (Interi
 
 The basic purpose of IGPs and EGPs is the same, to share information about routes to destinations. However they function differently.
 
-When I say ‘algorithm’ I mean the processes each protocol uses to share route information and choose the best route to each destination. **All routing protocols have the same goal. To share route information and select the best route to each destination. However, the algorithm used to do so is different for each routing protocol.**
+When I say ‘algorithm’ I mean the processes each protocol uses to share route information and choose the best route to each destination. **All routing protocols have the same goal. To share route information and select the best route to each destination.** However, the algorithm used to do so is different for each routing protocol.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/510442be-796b-43db-a5f5-e01f00fecfb8" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/248347a2-24d5-4ab7-8a61-d2b75a7be48b" />
 
 ------
+## Distance vector
 
 Distance vector protocols were invented before link state protocols, in the early 1980s.
 
@@ -514,6 +516,7 @@ Why the name? When using a distance vector protocol, all the router knows is the
 The reason for the name ‘distance vector’ is because the routers **only learn the ‘distance’**, which is the **metric**, and the **‘vector’**, which is the direction to send traffic, to the next-hop router, of each route.
 
 -----
+## Link State
 
 When using a link state routing protocol, every router creates a ‘connectivity map’ of the network.
 
@@ -524,26 +527,28 @@ In link state protocols, each router gets a whole picture of the network so that
 Link state protocols use more resources, more CPU power and memory, on the router, because more information is shared. However, link state protocols tend to be faster in reacting to changes in the network than distance vector protocols.
 
 -----
+## Metric & Administrative Distance
+
 **if a router using a dynamic routing protocol learns two different routes to the same destination. How does it determine which is ‘best’?**
 
 As I briefly mentioned before, It uses the metric value of the routes to determine which is best. **A lower metric is considered better.**
 
 if a router learns two (or more) routes via the same routing protocol to the same destination, with the same metric, both will be added to the routing table. Traffic will be load-balanced over both routes. 
-This is called **ECMP (Equal Cost Multi-Path).**  ECMP load-balancing with a dynamic routing protocol.
+This is called **ECMP (Equal Cost Multi-Path).** Image Example below: 
 
 The Blue is the **AD (Administrative Distance)**. The Red is the **Metric** 
-<img width="836" height="83" alt="image" src="https://github.com/user-attachments/assets/32603764-add8-481b-9025-8758ea88d640" />
 
-------
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/32603764-add8-481b-9025-8758ea88d640" />
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/248347a2-24d5-4ab7-8a61-d2b75a7be48b" />
+-----
 
 In most cases a company will only use a single IGP for their network – usually OSPF, but sometimes EIGRP if they only use Cisco equipment. However, in some rare cases they might use two.
 
-Metric is used to compare **routes learned via the same routing protocol.** For example; If a router learns two routes to the same destination via OSPF, it uses metric to choose which route is better. However, different routing protocols use totally different metrics, so they cannot be compared.
+**Metric is used to compare routes learned via the same routing protocol.** For example; If a router learns two routes to the same destination via OSPF, it uses metric to choose which route is better. However, different routing protocols use totally different metrics, so they cannot be compared.
 
 
 For example, an OSPF route to 192.168.4.0/24 might have a metric of 30, while an EIGRP route to the same destination might have a metric of 33280. Which route is better? Which route should the router put in the route table? We can’t really answer those questions by looking at the metrics, because OSPF and EIGRP use totally different metrics.
 
-So, the administrative distance, or AD, is used to determine which routing protocol is preferred. A lower AD is preferred, and indicates that the routing protocol is considered more ‘trustworthy’, meaning more likely to select good routes.
+So, **the administrative distance, or AD, is used to determine which routing protocol is preferred**. A lower AD is preferred, and indicates that the routing protocol is considered more ‘trustworthy’, meaning more likely to select good routes.
+
 
