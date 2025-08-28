@@ -483,9 +483,7 @@ If multiple routes to a destination are learned, the router determines which rou
 
 ----
 
-Dynamic routing protocols can be divided into two main categories, 
-IGP (Interior Gateway Protocol). (EX: OSPF)
-EGP (Exterior Gateway Protocol)
+Dynamic routing protocols can be divided into two main categories: **IGP (Interior Gateway Protocol)** and **EGP (Exterior Gateway Protocol)**
 
 **IGPs** are used to share routes within a single autonomous system, AS, which is a single organization,(ie. a company).
 
@@ -493,17 +491,9 @@ EGP (Exterior Gateway Protocol)
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/2b2cfb1a-300e-44fe-a476-2e4a265b65c6" />
 
-Within each organization, an **IGP** is used to exchange routing information. However, to exchange routing information between AS’s, an **EGP** is used.
+The basic purpose of IGPs and EGPs is the same, to share information about routes to destinations. However they function differently.
 
-The basic purpose of IGPs and EGPs is the same, to share information about routes to destinations. However they function differently. 
-
-Note 💡:
-> There is only one type of **EGP algorithm = Path Vector.** And there is only **one EGP** that is used in modern networks That is **(BGP) Border Gateway Protocol.**
-
-
-I’ll repeat, when I say ‘algorithm’ I mean the processes each protocol uses to share route information and choose the best route to each destination.
-
-All routing protocols have the same goal. To share route information and select the best route to each destination. However, the algorithm used to do so is different for each routing protocol.
+When I say ‘algorithm’ I mean the processes each protocol uses to share route information and choose the best route to each destination. **All routing protocols have the same goal. To share route information and select the best route to each destination. However, the algorithm used to do so is different for each routing protocol.**
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/510442be-796b-43db-a5f5-e01f00fecfb8" />
 
