@@ -540,13 +540,10 @@ The Blue is the **AD (Administrative Distance)**. The Red is the **Metric**
 
 In most cases a company will only use a single IGP for their network – usually OSPF, but sometimes EIGRP if they only use Cisco equipment. However, in some rare cases they might use two.
 
+Metric is used to compare **routes learned via the same routing protocol.** For example; If a router learns two routes to the same destination via OSPF, it uses metric to choose which route is better. However, different routing protocols use totally different metrics, so they cannot be compared.
 
 
+For example, an OSPF route to 192.168.4.0/24 might have a metric of 30, while an EIGRP route to the same destination might have a metric of 33280. Which route is better? Which route should the router put in the route table? We can’t really answer those questions by looking at the metrics, because OSPF and EIGRP use totally different metrics.
 
-
-
-
-
-
-
+So, the administrative distance, or AD, is used to determine which routing protocol is preferred. A lower AD is preferred, and indicates that the routing protocol is considered more ‘trustworthy’, meaning more likely to select good routes.
 
