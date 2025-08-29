@@ -479,7 +479,7 @@ Routers can use dynamic routing protocols to advertise information about their c
 
 They form ‘adjacencies’ , also known as ‘neighbor relationships’ or ‘neighborships’ with adjacent routers to exchange this information.
 
-If multiple routes to a destination are learned, the router determines which route is superior and adds it to the routing table. It uses the ‘metric’ of the route to decide which is superior, and the lower metric is superior.
+If multiple routes to a destination are learned, the router determines which route is superior and adds it to the routing table. 
 
 ----
 
