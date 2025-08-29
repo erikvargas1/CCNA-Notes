@@ -472,14 +472,9 @@ Up to 8 interfaces can be formed into a single EtherChannel (LACP allows up to 1
 
 **Host Route:** A host route is a route to a specific host, a single address, specified with a /32 mask. EX: 192.168.13.1/32
 
-A benefit of Dynamic Routing is: Routers will remove invalid routes (The destination network from the route table is replaced with the next-best route).
-
-**Here are a few key points.**
-Routers can use dynamic routing protocols to advertise information about their connected routes as well as routes they have learned from other devices.
+A benefit of Dynamic Routing is: They allow routers to automatically learn routes to different destinations without having to manually configure static routes. Routers can use dynamic routing protocols to advertise information about their connected routes as well as routes they have learned from other devices.
 
 They form ‘adjacencies’ , also known as ‘neighbor relationships’ or ‘neighborships’ with adjacent routers to exchange this information.
-
-If multiple routes to a destination are learned, the router determines which route is superior and adds it to the routing table. 
 
 ----
 
@@ -493,7 +488,7 @@ Dynamic routing protocols can be divided into two main categories: **IGP (Interi
 
 The basic purpose of IGPs and EGPs is the same, to share information about routes to destinations. However they function differently.
 
-When I say ‘algorithm’ I mean the processes each protocol uses to share route information and choose the best route to each destination. **All routing protocols have the same goal. To share route information and select the best route to each destination.** However, the algorithm used to do so is different for each routing protocol.
+When I say ‘algorithm’ I mean the processes each protocol uses to share route information and choose the best route to each destination. **All routing protocols have the same goal.** To share route information and select the best route to each destination. However, the algorithm used to do so is different for each routing protocol.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/510442be-796b-43db-a5f5-e01f00fecfb8" />
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/248347a2-24d5-4ab7-8a61-d2b75a7be48b" />
