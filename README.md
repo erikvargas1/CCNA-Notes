@@ -551,3 +551,4 @@ So, **the administrative distance, or AD, is used to determine which routing pro
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/92ee9160-6772-4860-8a31-95e9eb3c87e8" />
 
+Keep in mind that these are the values used on Cisco devices, other vendors might rank these differently.
