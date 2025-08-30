@@ -490,8 +490,7 @@ The basic purpose of IGPs and EGPs is the same, to share information about route
 
 When I say ‘algorithm’ I mean the processes each protocol uses to share route information and choose the best route to each destination. **All routing protocols have the same goal.** To share route information and select the best route to each destination. However, the algorithm used to do so is different for each routing protocol.
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/510442be-796b-43db-a5f5-e01f00fecfb8" />
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/248347a2-24d5-4ab7-8a61-d2b75a7be48b" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/510442be-796b-43db-a5f5-e01f00fecfb8" /> <img width="500" alt="image" src="https://github.com/user-attachments/assets/248347a2-24d5-4ab7-8a61-d2b75a7be48b" />
 
 ------
 ## Distance vector
