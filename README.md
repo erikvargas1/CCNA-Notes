@@ -547,14 +547,15 @@ Keep in mind that these are the values used on Cisco devices, other vendors migh
 
 ## Day 26 - OSPF Part 1 
 
+There are three versions of OSPF: 
 
+OSPFv1 -- not in use anymore, OSPFv2 -- Used for IPv4, OSPFv3 -- Used for IPv6 (Can be used for IPV4, but usually V2 is used) 
 
+-----
 
+Routers store information about the network in LSAs (Link State Advertisements), which are organized in a structure called the LSDB (Link State Database). Routers will **flood** LSAs until all routers in the **OSPF area** develop the same map of the network, meaning the same LSDB.
 
-
-
-
-
+Two important terms: **"flood"** and **"area".** You already know the term flood, switches do it when they receive a broadcast or unknown unicast frame. In the case of OSPF, it means they send the LSAs to all of their OSPF neighbors.
 
 
 
