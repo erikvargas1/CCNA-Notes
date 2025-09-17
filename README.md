@@ -598,6 +598,10 @@ In OSPF, there are three main steps in the process of sharing LSAs and determini
 
 • By dividing a large OSPF network into several smaller areas, you can avoid the above negative effects.
 
+-----
+
+All interfaces on all routers are assigned to area 0, also known as the backbone area.
+
 
 
 
