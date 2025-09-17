@@ -603,6 +603,8 @@ In OSPF, there are three main steps in the process of sharing LSAs and determini
 All interfaces on all routers are assigned to area 0, also known as the backbone area.
 
 
+**What is an area?** It’s a set of routers and links that share the same LSDB (Link State Database).
+
 
 
 
