@@ -558,6 +558,7 @@ Routers store information about the network in LSAs (Link State Advertisements),
 Two important terms: **"flood"** and **"area".** You already know the term flood, switches do it when they receive a broadcast or unknown unicast frame. In the case of OSPF, it means they send the LSAs to all of their OSPF neighbors.
 
 
+![28F3C8F9-183E-43A2-920F-F7FC92C594CD](https://github.com/user-attachments/assets/b266af81-0d74-4d49-8c5a-d1455a959073)
 
 
 
