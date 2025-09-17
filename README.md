@@ -565,7 +565,7 @@ Now that OSPF has been activated on R4’s G1/0 interface, that new LSA is added
 
 Remember, each of these routers has a complete map of the network. Think of "Maps" as a visual diagram that routers uses to calculate the best route. It’s not looking at a visual diagram like we are, of course, but in effect it’s the same thing. 
 
-Note that each individual LSA has an aging timer, which is 30 minutes by default. The LSA will be flooded again after the timer expires, so once every 30 minutes by default.
+Note that each individual LSA has an aging timer, which is 30 minutes by default. The LSA will be flooded again after the timer expires.
 
 ----
 
