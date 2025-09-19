@@ -641,7 +641,7 @@ In OSPF, there are three main steps in the process of sharing LSAs and determini
 • An interarea route is a route to a destination in a different OSPF area.
 
 
-<img width="500" alt="image" src="Screenshot 2025-09-18 at 8 31 28 PM" src="https://github.com/user-attachments/assets/4c9a9132-2e25-45d2-8f8e-4e690f23fe6e" />
+<img width="946" height="534" alt="Screenshot 2025-09-18 at 8 31 28 PM" src="https://github.com/user-attachments/assets/7e6c2237-e70c-4cbe-9d72-5e9ab8976281" />
 
 
 
