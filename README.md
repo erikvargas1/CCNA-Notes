@@ -638,12 +638,12 @@ Note that each individual LSA has an aging timer, which is 30 minutes by default
 
 Contiguous exmaple: Good  
 
-<img width="824" height="455" alt="Screenshot 2025-09-19 at 2 52 07 PM" src="https://github.com/user-attachments/assets/e068c06a-03d6-421e-969b-b57784c46928" />
+<img width="500" alt="image" src="Screenshot 2025-09-19 at 2 52 07 PM" src="https://github.com/user-attachments/assets/e068c06a-03d6-421e-969b-b57784c46928" />
 
 
 Non-Contiguous exmaple: BAD. Instead of another area 1 make another area named "Area 3"
 
-<img width="824" height="455" alt="Screenshot 2025-09-19 at 2 56 51 PM" src="https://github.com/user-attachments/assets/6ecc7943-3b8b-4979-8b03-22f72c7c8714" />
+<img width="500" alt="image" src="Screenshot 2025-09-19 at 2 56 51 PM" src="https://github.com/user-attachments/assets/6ecc7943-3b8b-4979-8b03-22f72c7c8714" />
 
 </details>
 
@@ -653,7 +653,9 @@ Non-Contiguous exmaple: BAD. Instead of another area 1 make another area named "
 • OSPF interfaces in the same subnet must be in the same area.
 
 <details>
-<img width="824" height="455" alt="Screenshot 2025-09-19 at 3 39 13 PM" src="https://github.com/user-attachments/assets/5fbf814b-4f6b-442c-9e9d-71e78c2f628c" />
+ 
+<img width="500" alt="image" src="Screenshot 2025-09-19 at 3 39 13 PM" src="https://github.com/user-attachments/assets/5fbf814b-4f6b-442c-9e9d-71e78c2f628c" />
+
 </details>
 
 
