@@ -654,7 +654,7 @@ Non-Contiguous exmaple: BAD. Instead of another area 1 make another area named "
 
 <details>
  
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/5fbf814b-4f6b-442c-9e9d-71e78c2f628c" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/5fbf814b-4f6b-442c-9e9d-71e78c2f628c" />
 
 </details>
 
