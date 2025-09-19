@@ -636,12 +636,14 @@ Note that each individual LSA has an aging timer, which is 30 minutes by default
 
 <details>
 
- Contiguous exmaple 
+Contiguous exmaple: Good  
 
 <img width="824" height="455" alt="Screenshot 2025-09-19 at 2 52 07 PM" src="https://github.com/user-attachments/assets/e068c06a-03d6-421e-969b-b57784c46928" />
 
 
+Non-Contiguous exmaple: BAD  
 
+<img width="824" height="455" alt="Screenshot 2025-09-19 at 2 56 51 PM" src="https://github.com/user-attachments/assets/6ecc7943-3b8b-4979-8b03-22f72c7c8714" />
 
 
 </details>
