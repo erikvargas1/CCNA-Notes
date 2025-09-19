@@ -588,22 +588,11 @@ Two important terms: **"flood"** and **"area".** You already know the term flood
 
 Now that OSPF has been activated on R4’s G1/0 interface, that new LSA is added to the LSDB. Remember that this LSDB is identical for all routers in the OSPF area. Each router then uses the **SPF algorithm** to calculate its best route to 192.168.4.0/24. 
 
-Remember, each of these routers has a complete map of the network. Think of "Maps" as a visual diagram that routers uses to calculate the best route. It’s not looking at a visual diagram like we are, of course, but in effect it’s the same thing. 
+Remember, each of these routers has a complete map of the network. Think of "Maps" as a visual diagram that routers uses to calculate the best route. 
 
 Note that each individual LSA has an aging timer, which is 30 minutes by default. The LSA will be flooded again after the timer expires.
 
 ----
-
-**OSPF Process**
-
-In OSPF, there are three main steps in the process of sharing LSAs and determining the best route to each destination in the network.
-
-1) Become neighbors with other routers connected to the same segment.
-
-2) Exchange LSAs with neighbor routers.
-
-3) Calculate the best routes to each destination, and insert them into the routing table.
-
 
 **OSPF Areas**
 
@@ -624,8 +613,6 @@ In OSPF, there are three main steps in the process of sharing LSAs and determini
 
 -----
 
-**OSPF Areas (PT.2)**
-
 • **What is an area?** An area is a set of routers and links that share the same LSDB. Refer to the screenshot: There are four areas. Each of these areas maintains a unique LSDB.
 
 • The backbone area (area 0) is an area that all other areas must connect to. 
@@ -642,6 +629,24 @@ In OSPF, there are three main steps in the process of sharing LSAs and determini
 
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/7e6c2237-e70c-4cbe-9d72-5e9ab8976281" />
+
+-------
+
+• **OSPF areas should be contiguous.** What does that mean? It means that each individual area should be connected, not divided up
+
+<details>
+
+ Contiguous exmaple 
+
+<img width="824" height="455" alt="Screenshot 2025-09-19 at 2 52 07 PM" src="https://github.com/user-attachments/assets/e068c06a-03d6-421e-969b-b57784c46928" />
+
+
+
+
+
+</details>
+
+
 
 
 
