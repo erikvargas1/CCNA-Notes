@@ -588,9 +588,7 @@ In OSPF, there are three main steps in the process of sharing LSAs and determini
 
 • In larger networks, a single-area design can have negative effects:
 
-- The SPF algorithm takes more time to calculate routes
-
-- The SPF algorithm requires exponentially more processing power on the routers
+- The SPF algorithm takes more time & processing power to calculate routes
 
 - The larger LSDB takes up more memory on the routers
 
@@ -598,13 +596,27 @@ In OSPF, there are three main steps in the process of sharing LSAs and determini
 
 • By dividing a large OSPF network into several smaller areas, you can avoid the above negative effects.
 
+
 -----
 
-All interfaces on all routers are assigned to area 0, also known as the backbone area.
+**OSPF Areas (PT.2)**
+
+• **What is an area?** An area is a set of routers and links that share the same LSDB. Refer to the screenshot: There are four areas. Each of these areas maintains a unique LSDB.
+
+• The backbone area (area 0) is an area that all other areas must connect to. 
+
+• Routers with all interfaces in the same area are called **internal routers.**
+
+• Routers with interfaces in multiple areas are called **area border routers (ABRs)**. ABRs maintain a separate LSDB for each area they are connected to. It is recommend that you connect an ABR to a maximum of 2 areas. Connecting an ABR to 3+ areas can overburden the router.
+
+• Routers connected to the backbone area (area 0) are called **backbone routers.**
+
+• An intra-area route is a route to a destination inside the same OSPF area.
+
+• An interarea route is a route to a destination in a different OSPF area.
 
 
-**What is an area?** It’s a set of routers and links that share the same LSDB (Link State Database).
-
+<img width="500" alt="image" src="Screenshot 2025-09-18 at 8 31 28 PM" src="https://github.com/user-attachments/assets/4c9a9132-2e25-45d2-8f8e-4e690f23fe6e" />
 
 
 
