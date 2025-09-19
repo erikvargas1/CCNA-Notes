@@ -632,7 +632,7 @@ In OSPF, there are three main steps in the process of sharing LSAs and determini
 
 • Routers with all interfaces in the same area are called **internal routers.**
 
-• Routers with interfaces in multiple areas are called **area border routers (ABRs)**. ABRs maintain a separate LSDB for each area they are connected to. It is recommend that you connect an ABR to a maximum of 2 areas. Connecting an ABR to 3+ areas can overburden the router.
+• Routers with interfaces in multiple areas are called **area border routers (ABRs)**. ABRs maintain a separate LSDB for each area they are connected to. It is recommend that you connect an ABR to a maximum of 2 areas. Connecting an ABR to 3+ areas can overburden the router. EX: The 3 routers in the middle have two LSDB's because they're apart of two areas. 
 
 • Routers connected to the backbone area (area 0) are called **backbone routers.**
 
