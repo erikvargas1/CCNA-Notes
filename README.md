@@ -34,6 +34,31 @@ A firewall is a network security device that filters incoming and outgoing netwo
 Firewalls can be hardware or software-based and are used to protect networks from unwanted traffic.
 
 ------
+
+**What is a subnet?**
+A subnet, or subnetwork, is a smaller, segment of a larger network. It helps improve performance, security, and efficiency by making the network easier to manage and control.
+
+How it works 
+
+**1) IP Addresses and Subnet Masks:** Every device on a network has a unique IP address. A subnet mask is a number that distinguishes the network portion of an IP address from the host portion.
+
+**2) Dividing the Network:** Subnetting involves using a subnet mask to separate an IP address's network portion from its host portion, allowing routers to route data more efficiently and create isolated segments for different users/departments. Subnetting "borrows" bits from the host portion of an IP address and assigns them to the network portion, creating more network addresses and smaller host address ranges within the larger network (The reverse can be done as well). 
+
+**3) Routers and Routing:** Routers use the subnet mask to identify the destination subnet of a data packet. This allows them to forward traffic along the most efficient path, rather than having it travel across the entire network. 
+
+
+Benefits of Subnetting
+
+Improved Performance: By segmenting networks, subnets reduce network congestion and ensure data travels through fewer unnecessary routes, increasing speeds. 
+
+Enhanced Security: Subnets can isolate sensitive data, such as financial data, from other parts of the network, preventing unauthorized access and streamlining monitoring. 
+
+Efficient IP Address Allocation: Subnetting prevents large numbers of IP addresses from going unused by efficiently allocating them to specific subnets. 
+
+Better Network Organization: Subnets help organize network traffic, allowing for more streamlined management and troubleshooting of different network segments. 
+
+
+------
 ## Day 6- Ethernet LAN Switching (part 2)
 
 **What is ARP?** 
